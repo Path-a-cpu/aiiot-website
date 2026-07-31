@@ -9,12 +9,12 @@ interface Props {
 const { lang } = Astro.props;
 const pathname = Astro.url.pathname;
 const pure = stripLang(pathname, lang);
-const links = locales.map((l) => ({
-  code: l,
-  label: languages[l],
-  href: `/${l}${pure === '/' ? '/' : pure}`,
-  active: l === lang,
-}));
+const suffix = pure === '/' ? '/' : pure;
+const links = [
+  { code: 'en', label: languages['en'], href: '/en' + suffix, active: lang === 'en' },
+  { code: 'zh', label: languages['zh'], href: '/zh' + suffix, active: lang === 'zh' },
+  { code: 'de', label: languages['de'], href: '/de' + suffix, active: lang === 'de' },
+];
 ---
 <div class="flex items-center gap-0.5 text-sm border border-slate-200 rounded-md px-1 py-0.5">
   {links.map((l) => (

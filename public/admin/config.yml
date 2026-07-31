@@ -1,0 +1,105 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  branch: main
+  base_url: https://www.daq-iot.com
+  auth_endpoint: oauth
+
+locale: zh_Hans
+
+media_folder: public/images
+public_folder: /images
+
+i18n:
+  structure: multiple_folders
+  locales: [en, zh, de]
+  default_locale: zh
+
+collections:
+  - name: translations
+    label: 网站文案
+    folder: src/content/translations
+    i18n: true
+    create: false
+    delete: false
+    extension: md
+    format: frontmatter
+    fields:
+      - label: 文案 JSON
+        name: body
+        widget: code
+        default_language: json
+        i18n: true
+
+  - name: products
+    label: 产品
+    folder: src/content/products
+    i18n: true
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{title}}"
+    fields:
+      - label: 产品名称
+        name: title
+        widget: string
+        i18n: true
+      - label: 一句话描述
+        name: summary
+        widget: text
+        i18n: true
+      - label: 产品图片
+        name: image
+        widget: image
+        required: false
+        i18n: duplicate
+      - label: 排序
+        name: order
+        widget: number
+        value_type: int
+        default: 0
+        i18n: duplicate
+      - label: 详细介绍
+        name: body
+        widget: markdown
+        i18n: true
+
+  - name: posts
+    label: 博客文章
+    folder: src/content/posts
+    i18n: true
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{title}}"
+    fields:
+      - label: 标题
+        name: title
+        widget: string
+        i18n: true
+      - label: 描述
+        name: description
+        widget: text
+        i18n: true
+      - label: 发布日期
+        name: pubDate
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        i18n: duplicate
+      - label: 作者
+        name: author
+        widget: string
+        required: false
+        i18n: duplicate
+      - label: 封面图
+        name: image
+        widget: image
+        required: false
+        i18n: duplicate
+      - label: 正文
+        name: body
+        widget: markdown
+        i18n: true

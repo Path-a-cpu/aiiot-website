@@ -1,17 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { useTranslations } from '../../i18n/utils';
+import { getTranslations } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
 
 export function getStaticPaths() {
   return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
 }
 const { lang } = Astro.params as { lang: Lang };
-const t = useTranslations(lang);
-
-// 提醒：frontmatter 里不要写反引号模板字符串（如 `/${lang}`），
-// 列表也不要用 .map 返回 JSX（会与 Astro 生成的 $$render 模板多层嵌套导致 esbuild 报错）。
-// 链接一律用 lang + '/路径' 拼接；卡片直接静态写出，文案从 t() 取。
+const t = await getTranslations(lang);
+const contactHref = '/' + lang + '/contact';
+const productsHref = '/' + lang + '/products';
 ---
 <BaseLayout lang={lang} title={t('hero.title') + ' | DAQ-IOT'} description={t('hero.subtitle')}>
   <!-- Hero -->
@@ -20,8 +18,8 @@ const t = useTranslations(lang);
       <h1 class="text-4xl md:text-5xl font-bold text-slate-900">{t('hero.title')}</h1>
       <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">{t('hero.subtitle')}</p>
       <div class="mt-8 flex justify-center gap-4">
-        <a href={'/' + lang + '/contact'} class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition">{t('hero.ctaPrimary')}</a>
-        <a href={'/' + lang + '/products'} class="border border-slate-300 text-slate-700 px-6 py-3 rounded-md font-medium hover:border-blue-600 hover:text-blue-700 transition">{t('hero.ctaSecondary')}</a>
+        <a href={contactHref} class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition">{t('hero.ctaPrimary')}</a>
+        <a href={productsHref} class="border border-slate-300 text-slate-700 px-6 py-3 rounded-md font-medium hover:border-blue-600 hover:text-blue-700 transition">{t('hero.ctaSecondary')}</a>
       </div>
       <img src="/hero.svg" alt="DAQ-IOT 工业物联网" class="mx-auto mt-10 w-full max-w-4xl rounded-2xl shadow-xl" />
     </div>
@@ -66,7 +64,7 @@ const t = useTranslations(lang);
     <div class="mx-auto max-w-4xl px-4 py-14 text-center text-white">
       <h2 class="text-3xl font-bold">{t('cta.title')}</h2>
       <p class="mt-3 text-blue-100">{t('cta.subtitle')}</p>
-      <a href={'/' + lang + '/contact'} class="mt-6 inline-block bg-white text-blue-700 px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition">{t('cta.button')}</a>
+      <a href={contactHref} class="mt-6 inline-block bg-white text-blue-700 px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition">{t('cta.button')}</a>
     </div>
   </section>
 </BaseLayout>

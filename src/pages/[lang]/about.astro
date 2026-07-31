@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { useTranslations } from '../../i18n/utils';
+import { getTranslations } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
 
 export function getStaticPaths() {
   return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
 }
 const { lang } = Astro.params as { lang: Lang };
-const t = useTranslations(lang);
+const t = await getTranslations(lang);
 ---
-<BaseLayout lang={lang} title={`${t('about.title')} | DAQ-IOT`} description={t('about.p1')}>
+<BaseLayout lang={lang} title={t('about.title') + ' | DAQ-IOT'} description={t('about.p1')}>
   <section class="mx-auto max-w-3xl px-4 py-20">
     <h1 class="text-4xl font-bold text-slate-900">{t('about.title')}</h1>
     <p class="mt-6 text-lg text-slate-600 leading-relaxed">{t('about.p1')}</p>

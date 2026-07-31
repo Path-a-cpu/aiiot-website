@@ -15,11 +15,8 @@ const { lang, title, description = '' } = Astro.props;
 // 生成 hreflang 多语言标签（SEO 关键：告诉谷歌每种语言对应的页面）
 const pathname = Astro.url.pathname;
 const pure = stripLang(pathname, lang);
-const alternates = locales.map((l) => ({
-  lang: l,
-  href: `/${l}${pure === '/' ? '' : pure}`,
-}));
-const canonical = `/${lang}${pure === '/' ? '' : pure}`;
+const suffix = pure === '/' ? '' : pure;
+const canonical = '/' + lang + suffix;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -29,8 +26,10 @@ const canonical = `/${lang}${pure === '/' ? '' : pure}`;
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonical} />
-    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
-    <link rel="alternate" hreflang="x-default" href={`/en${pure === '/' ? '' : pure}`} />
+    <link rel="alternate" hreflang="en" href={'/en' + suffix} />
+    <link rel="alternate" hreflang="zh" href={'/zh' + suffix} />
+    <link rel="alternate" hreflang="de" href={'/de' + suffix} />
+    <link rel="alternate" hreflang="x-default" href={'/en' + suffix} />
     <slot name="head" />
   </head>
   <body class="min-h-screen bg-white text-slate-800 flex flex-col">
