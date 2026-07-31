@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../i18n/config';
+
+export function getStaticPaths() {
+  return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+---
+<BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-slate-900">{t('products.title')}</h1>
+      <p class="mt-3 text-slate-500">{t('products.subtitle')}</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+        <img src="/product-1.svg" alt={t('product1Name')} class="mb-4 w-full h-40 object-cover rounded-lg" />
+        <h3 class="text-xl font-semibold text-slate-900">{t('product1Name')}</h3>
+        <p class="mt-2 text-slate-600">{t('product1Desc')}</p>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+        <img src="/product-2.svg" alt={t('product2Name')} class="mb-4 w-full h-40 object-cover rounded-lg" />
+        <h3 class="text-xl font-semibold text-slate-900">{t('product2Name')}</h3>
+        <p class="mt-2 text-slate-600">{t('product2Desc')}</p>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+        <img src="/product-3.svg" alt={t('product3Name')} class="mb-4 w-full h-40 object-cover rounded-lg" />
+        <h3 class="text-xl font-semibold text-slate-900">{t('product3Name')}</h3>
+        <p class="mt-2 text-slate-600">{t('product3Desc')}</p>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+        <img src="/product-4.svg" alt={t('product4Name')} class="mb-4 w-full h-40 object-cover rounded-lg" />
+        <h3 class="text-xl font-semibold text-slate-900">{t('product4Name')}</h3>
+        <p class="mt-2 text-slate-600">{t('product4Desc')}</p>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+        <img src="/product-5.svg" alt={t('product5Name')} class="mb-4 w-full h-40 object-cover rounded-lg" />
+        <h3 class="text-xl font-semibold text-slate-900">{t('product5Name')}</h3>
+        <p class="mt-2 text-slate-600">{t('product5Desc')}</p>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+        <img src="/product-6.svg" alt={t('product6Name')} class="mb-4 w-full h-40 object-cover rounded-lg" />
+        <h3 class="text-xl font-semibold text-slate-900">{t('product6Name')}</h3>
+        <p class="mt-2 text-slate-600">{t('product6Desc')}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

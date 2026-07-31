@@ -1,0 +1,27 @@
+---
+import { locales, languages } from '../i18n/config';
+import { stripLang } from '../i18n/utils';
+import type { Lang } from '../i18n/config';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const pathname = Astro.url.pathname;
+const pure = stripLang(pathname, lang);
+const links = locales.map((l) => ({
+  code: l,
+  label: languages[l],
+  href: `/${l}${pure === '/' ? '/' : pure}`,
+  active: l === lang,
+}));
+---
+<div class="flex items-center gap-0.5 text-sm border border-slate-200 rounded-md px-1 py-0.5">
+  {links.map((l) => (
+    <a
+      href={l.href}
+      title={l.label}
+      class={`px-1.5 py-0.5 rounded uppercase ${l.active ? 'text-blue-700 font-semibold' : 'text-slate-400 hover:text-blue-700'}`}
+    >{l.code}</a>
+  ))}
+</div>

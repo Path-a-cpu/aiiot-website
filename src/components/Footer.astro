@@ -1,0 +1,28 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/config';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+<footer class="bg-slate-900 text-slate-300">
+  <div class="mx-auto max-w-6xl px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <div class="text-white font-bold text-lg">DAQ-IOT <span class="text-sm font-normal text-slate-400">数采物联</span></div>
+      <p class="mt-2 text-sm text-slate-400 max-w-sm">{t('footer.tagline')}</p>
+    </div>
+    <div>
+      <div class="text-white font-semibold text-sm mb-2">{t('footer.contact')}</div>
+      <p class="text-sm text-slate-400">Email: business@daq-iot.com</p>
+      <p class="text-sm text-slate-400">Tel: 400-9677-032</p>
+      <p class="text-sm text-slate-400">WhatsApp: +86 152 7563 5861</p>
+    </div>
+    <div class="text-sm text-slate-500 md:text-right">
+      {t('footer.rights')}
+      <br />沪ICP备2021036991号
+    </div>
+  </div>
+</footer>

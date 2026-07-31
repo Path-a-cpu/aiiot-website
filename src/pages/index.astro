@@ -1,0 +1,16 @@
+---
+import { defaultLang } from '../i18n/config';
+const target = `/${defaultLang}`;
+---
+<!doctype html>
+<html lang={defaultLang}>
+  <head>
+    <meta charset="utf-8" />
+    <!-- 静态托管（Cloudflare Pages 等）兼容的纯前端重定向 -->
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+  </head>
+  <body>
+    <p>Redirecting to <a href={target}>{target}</a>...</p>
+  </body>
+</html>

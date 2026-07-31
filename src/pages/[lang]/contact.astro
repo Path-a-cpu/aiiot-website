@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../i18n/config';
+
+export function getStaticPaths() {
+  return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+---
+<BaseLayout lang={lang} title={`${t('contact.title')} | DAQ-IOT`} description={t('contact.subtitle')}>
+  <section class="mx-auto max-w-4xl px-4 py-20">
+    <h1 class="text-4xl font-bold text-slate-900">{t('contact.title')}</h1>
+    <p class="mt-3 text-slate-500 mb-8">{t('contact.subtitle')}</p>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="space-y-4 text-slate-700">
+        <h2 class="text-xl font-semibold text-slate-900">{t('contact.infoTitle')}</h2>
+        <p><span class="font-medium">{t('contact.person')}:</span> 王亚乐 (Wang Yale)</p>
+        <p><span class="font-medium">{t('contact.email')}:</span> business@daq-iot.com</p>
+        <p><span class="font-medium">{t('contact.phone')}:</span> 400-9677-032</p>
+        <p><span class="font-medium">{t('contact.mobile')}:</span> +86 152 7563 5861</p>
+        <div>
+          <p class="font-medium">{t('contact.address')}:</p>
+          <p class="text-sm text-slate-600 mt-1">1. 上海市松江区欣浪路888弄6号楼16层</p>
+          <p class="text-sm text-slate-600">2. 河南省平顶山市汝州市钟楼街道东盛街19号</p>
+          <p class="text-sm text-slate-600">3. 郑州市郑东新区金水东路49号原盛国际1号楼B座</p>
+          <p class="text-sm text-slate-600">4. 孟加拉国达卡古尔山路105号9号楼8A室</p>
+        </div>
+      </div>
+
+      <!--
+        TODO: 把下面 access_key 换成你在 https://web3forms.com 免费获取的 key
+        注册后复制 Access Key 粘贴到 value 里即可，询盘会发到 business@daq-iot.com。
+      -->
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+      <input type="hidden" name="subject" value="New Inquiry from DAQ-IOT Website" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.name')}</label>
+        <input type="text" name="name" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.email')}</label>
+        <input type="email" name="email" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.company')}</label>
+        <input type="text" name="company" class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.message')}</label>
+        <textarea name="message" rows="5" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md font-medium hover:bg-blue-700 transition">{t('contact.submit')}</button>
+    </form>
+    </div>
+  </section>
+</BaseLayout>

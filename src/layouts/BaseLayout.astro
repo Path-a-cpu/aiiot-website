@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { locales } from '../i18n/config';
+import { stripLang } from '../i18n/utils';
+
+interface Props {
+  lang: 'en' | 'zh' | 'de';
+  title: string;
+  description?: string;
+}
+const { lang, title, description = '' } = Astro.props;
+
+// 生成 hreflang 多语言标签（SEO 关键：告诉谷歌每种语言对应的页面）
+const pathname = Astro.url.pathname;
+const pure = stripLang(pathname, lang);
+const alternates = locales.map((l) => ({
+  lang: l,
+  href: `/${l}${pure === '/' ? '' : pure}`,
+}));
+const canonical = `/${lang}${pure === '/' ? '' : pure}`;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={`/en${pure === '/' ? '' : pure}`} />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen bg-white text-slate-800 flex flex-col">
+    <Header lang={lang} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>
