@@ -36,6 +36,7 @@
   "about.p3": "欢迎通过 business@daq-iot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。",
   "products.title": "产品与解决方案",
   "products.subtitle": "面向数据采集、监控与管理的工业物联网软硬件产品",
+  "products.back": "返回产品",
   "contact.title": "联系我们",
   "contact.subtitle": "告诉我们您的需求，通常 24 小时内回复。",
   "contact.infoTitle": "联系信息",

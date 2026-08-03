@@ -36,6 +36,7 @@
   "about.p3": "Contact us at business@daq-iot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.",
   "products.title": "Products & Solutions",
   "products.subtitle": "Industrial IoT hardware and software for data acquisition, monitoring and management",
+  "products.back": "Back to Products",
   "contact.title": "Contact Us",
   "contact.subtitle": "Tell us what you need — we usually reply within 24 hours.",
   "contact.infoTitle": "Contact Information",
