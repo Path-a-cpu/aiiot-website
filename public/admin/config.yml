@@ -24,7 +24,12 @@ collections:
     delete: false
     extension: md
     format: frontmatter
+    identifier_field: name
     fields:
+      - label: 标识名
+        name: name
+        widget: string
+        i18n: duplicate
       - label: 文案 JSON
         name: body
         widget: code
