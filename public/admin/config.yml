@@ -2,8 +2,8 @@ backend:
   name: github
   repo: Path-a-cpu/daq-iot-website
   branch: main
-  base_url: https://daq-iot-oauth.zhangyanfeeii.workers.dev
-  auth_endpoint: auth
+  base_url: https://daq-iot-website.pages.dev
+  auth_endpoint: /oauth/auth
 
 locale: zh_Hans
 
