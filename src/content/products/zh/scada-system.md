@@ -1,4 +1,5 @@
 ---
+category: software
 title: SCADA系统
 summary: 面向生产线与公辅设备的监控组态与数据采集平台。
 image: /product-3.svg

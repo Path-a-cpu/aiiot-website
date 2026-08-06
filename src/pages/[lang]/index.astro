@@ -8,63 +8,124 @@ export function getStaticPaths() {
 }
 const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
-const contactHref = '/' + lang + '/contact';
-const productsHref = '/' + lang + '/products';
+const base = '/' + lang;
+
+const families = [
+  { key: 'software', href: base + '/products?cat=software',
+    desc: 'SCADA · 抄表识别 · 数据监控大屏 · EMS · 光伏运维云平台' },
+  { key: 'edge', href: base + '/products?cat=edge',
+    desc: '边缘计算网关 · 协议通信管理机' },
+  { key: 'sensor', href: base + '/products?cat=sensor',
+    desc: 'CT电流 · 红外温度 · 液位 · 无线温振 · 转速' },
+  { key: 'connect', href: base + '/products?cat=connect',
+    desc: '工业交换机 · 蜂窝路由 · 串口服务器 · 光模块' },
+  { key: 'auto', href: base + '/products?cat=auto',
+    desc: '无线安灯 · IO服务器 · RS485分配器' },
+];
+
+const industries = [
+  { n: '01', label: t('home.industry1') },
+  { n: '02', label: t('home.industry2') },
+  { n: '03', label: t('home.industry3') },
+  { n: '04', label: t('home.industry4') },
+];
+
+const stats = [
+  { v: t('home.stat1Value'), l: t('home.stat1Label') },
+  { v: t('home.stat2Value'), l: t('home.stat2Label') },
+  { v: t('home.stat3Value'), l: t('home.stat3Label') },
+  { v: t('home.stat4Value'), l: t('home.stat4Label') },
+];
 ---
 <BaseLayout lang={lang} title={t('hero.title') + ' | DAQ-IOT'} description={t('hero.subtitle')}>
+
   <!-- Hero -->
-  <section class="bg-gradient-to-b from-blue-50 to-white">
-    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-slate-900">{t('hero.title')}</h1>
-      <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">{t('hero.subtitle')}</p>
-      <div class="mt-8 flex justify-center gap-4">
-        <a href={contactHref} class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition">{t('hero.ctaPrimary')}</a>
-        <a href={productsHref} class="border border-slate-300 text-slate-700 px-6 py-3 rounded-md font-medium hover:border-blue-600 hover:text-blue-700 transition">{t('hero.ctaSecondary')}</a>
+  <section class="relative isolate overflow-hidden bg-brand-dark">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.25),transparent_55%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.18),transparent_50%)]"></div>
+    <div class="absolute inset-0 opacity-[0.07]" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><path d=\'M0 39.5H40M39.5 0V40\' fill=\'none\' stroke=\'white\' stroke-width=\'1\'/></svg>')"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/85 to-transparent"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-24 md:py-32">
+      <p class="text-brand text-sm font-medium tracking-widest uppercase">{t('home.eyebrow')}</p>
+      <h1 class="mt-4 text-4xl md:text-6xl font-bold text-white max-w-3xl leading-tight">{t('home.heroTitle')}</h1>
+      <p class="mt-6 text-lg text-slate-300 max-w-2xl">{t('home.heroSubtitle')}</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href={base + '/contact'} class="bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('home.heroCta1')}</a>
+        <a href={base + '/products'} class="border border-white/40 text-white px-7 py-3 rounded-md font-medium hover:bg-white/10 transition">{t('home.heroCta2')}</a>
       </div>
-      <img src="/hero.svg" alt="DAQ-IOT 工业物联网" class="mx-auto mt-10 w-full max-w-4xl rounded-2xl shadow-xl" />
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="mx-auto max-w-6xl px-4 py-16">
+  <!-- 五大产品矩阵 -->
+  <section class="mx-auto max-w-7xl px-4 py-20">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-slate-900">{t('features.title')}</h2>
-      <p class="mt-3 text-slate-500">{t('features.subtitle')}</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">{t('home.categoriesTitle')}</h2>
+      <p class="mt-3 text-slate-500">{t('home.categoriesSubtitle')}</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <h3 class="font-semibold text-slate-900">{t('feature1Title')}</h3>
-        <p class="mt-2 text-slate-600 text-sm">{t('feature1Desc')}</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      {families.map((f) => (
+        <a href={f.href} class="card-hover group block bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand">
+          <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-4">
+            <span class="text-brand font-bold text-lg">AI+</span>
+          </div>
+          <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{t('cat.' + f.key)}</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">{f.desc}</p>
+          <span class="mt-4 inline-flex items-center text-sm font-medium text-brand">{t('home.viewAll')} →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 行业解决方案 -->
+  <section class="bg-slate-50 border-y border-slate-100">
+    <div class="mx-auto max-w-7xl px-4 py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">{t('home.solutionsTitle')}</h2>
+        <p class="mt-3 text-slate-500">{t('home.solutionsSubtitle')}</p>
       </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <h3 class="font-semibold text-slate-900">{t('feature2Title')}</h3>
-        <p class="mt-2 text-slate-600 text-sm">{t('feature2Desc')}</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {industries.map((it) => (
+          <div class="bg-white rounded-2xl border border-slate-200 p-7 card-hover">
+            <span class="text-brand/30 text-3xl font-bold">{it.n}</span>
+            <h3 class="mt-3 text-xl font-semibold text-brand-dark">{it.label}</h3>
+          </div>
+        ))}
       </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <h3 class="font-semibold text-slate-900">{t('feature3Title')}</h3>
-        <p class="mt-2 text-slate-600 text-sm">{t('feature3Desc')}</p>
+      <div class="text-center mt-10">
+        <a href={base + '/solutions'} class="inline-flex items-center gap-2 text-brand font-medium hover:text-brand-dark transition">{t('nav.solutions')} →</a>
       </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <h3 class="font-semibold text-slate-900">{t('feature4Title')}</h3>
-        <p class="mt-2 text-slate-600 text-sm">{t('feature4Desc')}</p>
-      </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <h3 class="font-semibold text-slate-900">{t('feature5Title')}</h3>
-        <p class="mt-2 text-slate-600 text-sm">{t('feature5Desc')}</p>
-      </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <h3 class="font-semibold text-slate-900">{t('feature6Title')}</h3>
-        <p class="mt-2 text-slate-600 text-sm">{t('feature6Desc')}</p>
-      </div>
+    </div>
+  </section>
+
+  <!-- 数据基石 -->
+  <section class="mx-auto max-w-7xl px-4 py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-brand-dark">{t('home.statsTitle')}</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {stats.map((s) => (
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-brand">{s.v}</div>
+          <div class="mt-2 text-slate-500 text-sm">{s.l}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 合作伙伴 -->
+  <section class="bg-brand-dark">
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white">{t('home.partnersTitle')}</h2>
+      <p class="mt-3 text-slate-400">{t('home.partnersSubtitle')}</p>
+      <a href={base + '/partners'} class="mt-6 inline-block border border-white/40 text-white px-6 py-2.5 rounded-md text-sm font-medium hover:bg-white/10 transition">{t('nav.partners')} →</a>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-blue-600">
+  <section class="bg-brand">
     <div class="mx-auto max-w-4xl px-4 py-14 text-center text-white">
-      <h2 class="text-3xl font-bold">{t('cta.title')}</h2>
-      <p class="mt-3 text-blue-100">{t('cta.subtitle')}</p>
-      <a href={contactHref} class="mt-6 inline-block bg-white text-blue-700 px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition">{t('cta.button')}</a>
+      <h2 class="text-3xl font-bold">{t('home.ctaTitle')}</h2>
+      <p class="mt-3 text-brand-light">{t('home.ctaSubtitle')}</p>
+      <a href={base + '/contact'} class="mt-6 inline-block bg-white text-brand px-7 py-3 rounded-md font-medium hover:bg-brand-light transition">{t('home.ctaButton')}</a>
     </div>
   </section>
 </BaseLayout>

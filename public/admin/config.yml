@@ -65,6 +65,17 @@ collections:
         value_type: int
         default: 0
         i18n: duplicate
+      - label: 产品分类
+        name: category
+        widget: select
+        i18n: duplicate
+        default: software
+        options:
+          - { label: 'AI+软件', value: 'software' }
+          - { label: 'AI+边缘计算机', value: 'edge' }
+          - { label: 'AI+传感器', value: 'sensor' }
+          - { label: 'AI+智能连接', value: 'connect' }
+          - { label: 'AI+自动化', value: 'auto' }
       - label: 详细介绍
         name: body
         widget: markdown

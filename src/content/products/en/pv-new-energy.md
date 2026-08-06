@@ -1,4 +1,5 @@
 ---
+category: software
 title: PV & New Energy Monitoring
 summary: Solar PV and renewable energy monitoring systems with cloud dashboards.
 image: /product-6.svg

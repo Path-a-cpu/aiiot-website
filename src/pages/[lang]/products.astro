@@ -9,23 +9,97 @@ export function getStaticPaths() {
 }
 const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
-const allProducts = await getCollection('products', (entry) => entry.id.startsWith(lang + '/'));
-const products = allProducts.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+const base = '/' + lang;
+
+// 初始分类：构建时静态页默认显示全部，运行时由前端脚本根据 ?cat= 过滤
+const activeCat = Astro.url.searchParams.get('cat') || 'all';
+
+const all = await getCollection('products', (entry) => entry.id.startsWith(lang + '/'));
+const products = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+const cats = [
+  { key: 'all', label: t('products.all') },
+  { key: 'software', label: t('cat.software') },
+  { key: 'edge', label: t('cat.edge') },
+  { key: 'sensor', label: t('cat.sensor') },
+  { key: 'connect', label: t('cat.connect') },
+  { key: 'auto', label: t('cat.auto') },
+];
 ---
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
-  <section class="mx-auto max-w-6xl px-4 py-20">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-slate-900">{t('products.title')}</h1>
-      <p class="mt-3 text-slate-500">{t('products.subtitle')}</p>
+  <section class="bg-brand-dark">
+    <div class="mx-auto max-w-7xl px-4 py-14">
+      <h1 class="text-3xl md:text-4xl font-bold text-white">{t('products.title')}</h1>
+      <p class="mt-3 text-slate-300 max-w-2xl">{t('products.subtitle')}</p>
     </div>
-    <div class="grid md:grid-cols-2 gap-8">
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-10">
+    <!-- 分类筛选（前端脚本处理点击与 ?cat= 初始过滤） -->
+    <div class="flex flex-wrap gap-2 mb-10" id="catFilter">
+      {cats.map((c) => (
+        <button type="button" data-cat={c.key}
+          class={`cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ${
+            (activeCat === c.key || (activeCat === 'all' && c.key === 'all'))
+              ? 'bg-brand text-white border-brand'
+              : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
+          }`}>
+          {c.label}
+        </button>
+      ))}
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" id="productGrid">
       {products.map((p) => (
-        <a href={'/' + lang + '/products/' + p.id.split('/').slice(1).join('/')} class="block border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:border-blue-400 transition">
-          {p.data.image && <img src={p.data.image} alt={p.data.title} class="mb-4 w-full h-40 object-cover rounded-lg" />}
-          <h3 class="text-xl font-semibold text-slate-900">{p.data.title}</h3>
-          <p class="mt-2 text-slate-600">{p.data.summary}</p>
+        <a href={'/' + lang + '/products/' + p.id.split('/').slice(1).join('/')}
+           data-category={p.data.category}
+           class="product-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
+          {p.data.image && <img src={p.data.image} alt={p.data.title} class="w-full h-48 object-cover" />}
+          <div class="p-6">
+            <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">{t('cat.' + p.data.category)}</span>
+            <h3 class="text-xl font-semibold text-brand-dark">{p.data.title}</h3>
+            <p class="mt-2 text-slate-600 text-sm leading-relaxed">{p.data.summary}</p>
+          </div>
         </a>
       ))}
     </div>
+
+    <p class="text-slate-500 py-12 text-center hidden" id="productEmpty">{t('products.empty')}</p>
   </section>
 </BaseLayout>
+
+<script>
+  const grid = document.getElementById('productGrid');
+  const empty = document.getElementById('productEmpty');
+  const cards = grid ? Array.from(grid.querySelectorAll('.product-card')) : [];
+  const btns = Array.from(document.querySelectorAll('.cat-btn'));
+
+  function paint(cat: string) {
+    let visible = 0;
+    cards.forEach((c) => {
+      const show = cat === 'all' || (c as HTMLElement).dataset.category === cat;
+      (c as HTMLElement).style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (empty) empty.classList.toggle('hidden', visible !== 0);
+    btns.forEach((b) => {
+      const on = (b as HTMLElement).dataset.cat === cat;
+      b.className = 'cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ' +
+        (on ? 'bg-brand text-white border-brand' : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand');
+    });
+  }
+
+  const basePath = location.pathname.replace(/\/+$/, '');
+  btns.forEach((b) => {
+    b.addEventListener('click', () => {
+      const cat = (b as HTMLElement).dataset.cat || 'all';
+      const url = cat === 'all' ? basePath : basePath + '?cat=' + cat;
+      history.replaceState(null, '', url);
+      paint(cat);
+    });
+  });
+
+  // 页面加载时根据 URL 的 ?cat= 过滤（兼容导航下拉链接）
+  const initial = new URLSearchParams(location.search).get('cat') || 'all';
+  paint(initial);
+</script>

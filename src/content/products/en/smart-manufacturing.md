@@ -1,4 +1,5 @@
 ---
+category: auto
 title: Smart Manufacturing Solutions
 summary: Digital factory solutions including OEE, equipment connectivity and production visualization.
 image: /product-5.svg

@@ -1,4 +1,5 @@
 ---
+category: edge
 title: 数据采集监控系统
 summary: 设备与环境实时数据采集、远程监控与告警管理。
 image: /product-2.svg

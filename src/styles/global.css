@@ -1,9 +1,49 @@
 @import "tailwindcss";
 
-/* 全局基础样式 */
+/* 品牌主题色（参考研华工业风：科技蓝 + 深海军蓝） */
+@theme {
+  --color-brand: #0096d6;
+  --color-brand-dark: #0a2a43;
+  --color-brand-darker: #061d31;
+  --color-brand-light: #e6f4fb;
+  --color-accent: #00c2a8;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* 顶部导航下划线动画 */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: var(--color-brand);
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  width: 100%;
+}
+
+/* 卡片悬浮上浮 */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px -12px rgba(10, 42, 67, 0.25);
+  border-color: var(--color-brand);
 }

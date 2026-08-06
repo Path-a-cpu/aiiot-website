@@ -1,4 +1,5 @@
 ---
+category: edge
 title: Data Acquisition & Monitoring System
 summary: Real-time data collection, remote monitoring and alarm management for equipment and environment.
 image: /product-2.svg

@@ -7,22 +7,61 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = await getTranslations(lang);
+const base = '/' + lang;
+
+const productCats = [
+  { key: 'software', href: base + '/products?cat=software' },
+  { key: 'edge', href: base + '/products?cat=edge' },
+  { key: 'sensor', href: base + '/products?cat=sensor' },
+  { key: 'connect', href: base + '/products?cat=connect' },
+  { key: 'auto', href: base + '/products?cat=auto' },
+];
 ---
-<footer class="bg-slate-900 text-slate-300">
-  <div class="mx-auto max-w-6xl px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div>
-      <div class="text-white font-bold text-lg">DAQ-IOT <span class="text-sm font-normal text-slate-400">数采物联</span></div>
-      <p class="mt-2 text-sm text-slate-400 max-w-sm">{t('footer.tagline')}</p>
+<footer class="bg-brand-dark text-slate-300">
+  <div class="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <!-- 品牌 -->
+    <div class="col-span-2 md:col-span-1">
+      <div class="text-white font-bold text-xl">DAQ<span class="text-brand">-IOT</span> <span class="text-xs font-normal text-slate-400">数采物联</span></div>
+      <p class="mt-3 text-sm text-slate-400 max-w-xs">{t('footer.tagline')}</p>
     </div>
+
+    <!-- 产品 -->
     <div>
-      <div class="text-white font-semibold text-sm mb-2">{t('footer.contact')}</div>
-      <p class="text-sm text-slate-400">Email: business@daq-iot.com</p>
-      <p class="text-sm text-slate-400">Tel: 400-9677-032</p>
-      <p class="text-sm text-slate-400">WhatsApp: +86 152 7563 5861</p>
+      <div class="text-white font-semibold text-sm mb-3">{t('footer.products')}</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        {productCats.map((c) => (
+          <li><a href={c.href} class="hover:text-brand transition">{t('cat.' + c.key)}</a></li>
+        ))}
+      </ul>
     </div>
-    <div class="text-sm text-slate-500 md:text-right">
-      {t('footer.rights')}
-      <br />沪ICP备2021036991号
+
+    <!-- 公司 -->
+    <div>
+      <div class="text-white font-semibold text-sm mb-3">{t('footer.company')}</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a href={base + '/solutions'} class="hover:text-brand transition">{t('nav.solutions')}</a></li>
+        <li><a href={base + '/services'} class="hover:text-brand transition">{t('nav.services')}</a></li>
+        <li><a href={base + '/partners'} class="hover:text-brand transition">{t('nav.partners')}</a></li>
+        <li><a href={base + '/about'} class="hover:text-brand transition">{t('nav.about')}</a></li>
+        <li><a href={base + '/contact'} class="hover:text-brand transition">{t('nav.contact')}</a></li>
+      </ul>
+    </div>
+
+    <!-- 联系方式 -->
+    <div>
+      <div class="text-white font-semibold text-sm mb-3">{t('footer.contact')}</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li>Email: business@daq-iot.com</li>
+        <li>Tel: 400-9677-032</li>
+        <li>WhatsApp: +86 152 7563 5861</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 py-4 text-xs text-slate-500 flex flex-col md:flex-row justify-between gap-2">
+      <span>{t('footer.rights')}</span>
+      <span>沪ICP备2021036991号</span>
     </div>
   </div>
 </footer>

@@ -1,4 +1,5 @@
 ---
+category: edge
 title: Datenerfassungs- und Überwachungssystem
 summary: Echtzeit-Datenerfassung, Fernüberwachung und Alarmmanagement für Anlagen und Umgebung.
 image: /product-2.svg

@@ -1,4 +1,5 @@
 ---
+category: software
 title: SCADA System
 summary: Supervisory control and data acquisition platform for production lines and utilities.
 image: /product-3.svg

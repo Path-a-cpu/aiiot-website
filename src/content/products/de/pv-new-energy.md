@@ -1,4 +1,5 @@
 ---
+category: software
 title: PV- und Neue-Energie-Überwachung
 summary: Überwachungssysteme für Photovoltaik und erneuerbare Energien mit Cloud-Dashboards.
 image: /product-6.svg

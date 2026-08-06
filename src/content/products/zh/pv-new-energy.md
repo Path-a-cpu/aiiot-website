@@ -1,4 +1,5 @@
 ---
+category: software
 title: 光伏新能源监控
 summary: 光伏电站及新能源监控系统，支持云端看板。
 image: /product-6.svg

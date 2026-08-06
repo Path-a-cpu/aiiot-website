@@ -1,4 +1,5 @@
 ---
+category: software
 title: Energiemanagementplattform (EMS)
 summary: Überwachung des Energieverbrauchs, Optimierung der Effizienz und Kostensenkung für Fabriken und Gebäude.
 image: /product-4.svg

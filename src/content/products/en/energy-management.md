@@ -1,4 +1,5 @@
 ---
+category: software
 title: Energy Management Platform (EMS)
 summary: Monitor energy consumption, optimize efficiency and reduce costs for factories and buildings.
 image: /product-4.svg

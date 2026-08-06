@@ -1,4 +1,5 @@
 ---
+category: software
 title: 能源管理平台（EMS）
 summary: 工厂与建筑能耗监测、能效优化与成本分析。
 image: /product-4.svg

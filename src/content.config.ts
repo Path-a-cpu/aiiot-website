@@ -12,6 +12,7 @@ const products = defineCollection({
     title: z.string(),
     summary: z.string(),
     image: z.string().optional().default(''),
+    category: z.enum(['software', 'edge', 'sensor', 'connect', 'auto']).default('software'),
     order: z.number().default(0)
   })
 });

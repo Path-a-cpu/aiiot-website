@@ -1,4 +1,5 @@
 ---
+category: software
 title: SCADA-System
 summary: Leit- und Überwachungssystem für Produktionslinien und Betriebsmittel.
 image: /product-3.svg
