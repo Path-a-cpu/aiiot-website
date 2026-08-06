@@ -30,11 +30,168 @@ collections:
         name: name
         widget: string
         i18n: duplicate
-      - label: 文案 JSON
-        name: body
-        widget: code
-        default_language: json
-        i18n: true
+      - label: 导航栏
+        name: nav
+        widget: object
+        fields:
+          - { name: home, label: 首页, widget: string, i18n: true }
+          - { name: about, label: 关于我们, widget: string, i18n: true }
+          - { name: products, label: 产品中心, widget: string, i18n: true }
+          - { name: solutions, label: 解决方案, widget: string, i18n: true }
+          - { name: services, label: 服务, widget: string, i18n: true }
+          - { name: partners, label: 合作伙伴, widget: string, i18n: true }
+          - { name: support, label: 支持, widget: string, i18n: true }
+          - { name: contact, label: 联系我们, widget: string, i18n: true }
+          - { name: cta, label: 右上角按钮(获取报价), widget: string, i18n: true }
+      - label: 产品分类名
+        name: cat
+        widget: object
+        fields:
+          - { name: software, label: AI+软件, widget: string, i18n: true }
+          - { name: edge, label: AI+边缘计算机, widget: string, i18n: true }
+          - { name: sensor, label: AI+传感器, widget: string, i18n: true }
+          - { name: connect, label: AI+智能连接, widget: string, i18n: true }
+          - { name: auto, label: AI+自动化, widget: string, i18n: true }
+      - label: 网站标题与描述(SEO)
+        name: hero
+        widget: object
+        fields:
+          - { name: title, label: 网站标题, widget: string, i18n: true }
+          - { name: subtitle, label: 网站描述, widget: text, i18n: true }
+          - { name: ctaPrimary, label: 主按钮文字, widget: string, i18n: true }
+          - { name: ctaSecondary, label: 次按钮文字, widget: string, i18n: true }
+      - label: 首页
+        name: home
+        widget: object
+        fields:
+          - { name: eyebrow, label: 顶部小标签, widget: string, i18n: true }
+          - { name: heroTitle, label: 大标题, widget: string, i18n: true }
+          - { name: heroSubtitle, label: 大标题下方描述, widget: text, i18n: true }
+          - { name: heroCta1, label: 按钮1文字, widget: string, i18n: true }
+          - { name: heroCta2, label: 按钮2文字, widget: string, i18n: true }
+          - { name: categoriesTitle, label: 五大产品矩阵标题, widget: string, i18n: true }
+          - { name: categoriesSubtitle, label: 副标题, widget: text, i18n: true }
+          - { name: viewAll, label: 查看全部产品, widget: string, i18n: true }
+          - { name: catDescSoftware, label: 'AI+软件 卡片描述', widget: text, i18n: true }
+          - { name: catDescEdge, label: 'AI+边缘计算机 卡片描述', widget: text, i18n: true }
+          - { name: catDescSensor, label: 'AI+传感器 卡片描述', widget: text, i18n: true }
+          - { name: catDescConnect, label: 'AI+智能连接 卡片描述', widget: text, i18n: true }
+          - { name: catDescAuto, label: 'AI+自动化 卡片描述', widget: text, i18n: true }
+          - { name: solutionsTitle, label: 行业解决方案标题, widget: string, i18n: true }
+          - { name: solutionsSubtitle, label: 副标题, widget: text, i18n: true }
+          - label: 行业列表(可增删)
+            name: industries
+            widget: list
+            i18n: true
+            fields:
+              - { name: label, label: 行业名称, widget: string, i18n: true }
+          - { name: statsTitle, label: 数据基石标题, widget: string, i18n: true }
+          - label: 数据指标(可增删)
+            name: stats
+            widget: list
+            i18n: true
+            fields:
+              - { name: value, label: 数值, widget: string, i18n: true }
+              - { name: label, label: 说明文字, widget: string, i18n: true }
+          - { name: partnersTitle, label: 合作伙伴标题, widget: string, i18n: true }
+          - { name: partnersSubtitle, label: 副标题, widget: text, i18n: true }
+          - { name: ctaTitle, label: 底部CTA标题, widget: string, i18n: true }
+          - { name: ctaSubtitle, label: 副标题, widget: text, i18n: true }
+          - { name: ctaButton, label: 按钮文字, widget: string, i18n: true }
+      - label: 为什么选择(首页特色)
+        name: features
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - { name: feature1Title, label: 特色1标题, widget: string, i18n: true }
+          - { name: feature1Desc, label: 特色1描述, widget: text, i18n: true }
+          - { name: feature2Title, label: 特色2标题, widget: string, i18n: true }
+          - { name: feature2Desc, label: 特色2描述, widget: text, i18n: true }
+          - { name: feature3Title, label: 特色3标题, widget: string, i18n: true }
+          - { name: feature3Desc, label: 特色3描述, widget: text, i18n: true }
+          - { name: feature4Title, label: 特色4标题, widget: string, i18n: true }
+          - { name: feature4Desc, label: 特色4描述, widget: text, i18n: true }
+          - { name: feature5Title, label: 特色5标题, widget: string, i18n: true }
+          - { name: feature5Desc, label: 特色5描述, widget: text, i18n: true }
+          - { name: feature6Title, label: 特色6标题, widget: string, i18n: true }
+          - { name: feature6Desc, label: 特色6描述, widget: text, i18n: true }
+      - label: 通用CTA区块
+        name: cta
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - { name: button, label: 按钮文字, widget: string, i18n: true }
+      - label: 关于我们页
+        name: about
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: p1, label: 段落1, widget: text, i18n: true }
+          - { name: p2, label: 段落2, widget: text, i18n: true }
+          - { name: p3, label: 段落3, widget: text, i18n: true }
+      - label: 产品页
+        name: products
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - { name: back, label: 返回产品, widget: string, i18n: true }
+          - { name: all, label: 全部产品, widget: string, i18n: true }
+          - { name: empty, label: 空分类提示, widget: string, i18n: true }
+      - label: 联系我们页
+        name: contact
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - { name: infoTitle, label: 联系信息标题, widget: string, i18n: true }
+          - { name: name, label: 姓名框占位, widget: string, i18n: true }
+          - { name: email, label: 邮箱框占位, widget: string, i18n: true }
+          - { name: company, label: 公司框占位, widget: string, i18n: true }
+          - { name: message, label: 留言框占位, widget: string, i18n: true }
+          - { name: submit, label: 提交按钮, widget: string, i18n: true }
+          - { name: success, label: 提交成功提示, widget: string, i18n: true }
+          - { name: phone, label: 电话标签, widget: string, i18n: true }
+          - { name: mobile, label: 手机/WhatsApp标签, widget: string, i18n: true }
+          - { name: person, label: 联系人标签, widget: string, i18n: true }
+          - { name: address, label: 地址标签, widget: string, i18n: true }
+      - label: 解决方案页
+        name: solutions
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - { name: p1, label: 段落, widget: text, i18n: true }
+      - label: 服务页
+        name: services
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+      - label: 合作伙伴页
+        name: partners
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+      - label: 技术支持页
+        name: support
+        widget: object
+        fields:
+          - { name: title, label: 标题, widget: string, i18n: true }
+          - { name: subtitle, label: 副标题, widget: text, i18n: true }
+      - label: 页脚
+        name: footer
+        widget: object
+        fields:
+          - { name: contact, label: 联系方式标题, widget: string, i18n: true }
+          - { name: products, label: 产品标题, widget: string, i18n: true }
+          - { name: solutions, label: 解决方案标题, widget: string, i18n: true }
+          - { name: company, label: 公司标题, widget: string, i18n: true }
+          - { name: rights, label: 版权信息, widget: string, i18n: true }
+          - { name: tagline, label: 标语, widget: string, i18n: true }
 
   - name: products
     label: 产品

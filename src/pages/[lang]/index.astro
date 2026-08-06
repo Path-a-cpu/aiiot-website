@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getTranslations } from '../../i18n/utils';
+import { getTranslations, getSiteData } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
 
 export function getStaticPaths() {
@@ -8,34 +8,26 @@ export function getStaticPaths() {
 }
 const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
+const site = await getSiteData(lang);
 const base = '/' + lang;
 
 const families = [
-  { key: 'software', href: base + '/products?cat=software',
-    desc: 'SCADA · 抄表识别 · 数据监控大屏 · EMS · 光伏运维云平台' },
-  { key: 'edge', href: base + '/products?cat=edge',
-    desc: '边缘计算网关 · 协议通信管理机' },
-  { key: 'sensor', href: base + '/products?cat=sensor',
-    desc: 'CT电流 · 红外温度 · 液位 · 无线温振 · 转速' },
-  { key: 'connect', href: base + '/products?cat=connect',
-    desc: '工业交换机 · 蜂窝路由 · 串口服务器 · 光模块' },
-  { key: 'auto', href: base + '/products?cat=auto',
-    desc: '无线安灯 · IO服务器 · RS485分配器' },
+  { key: 'software', href: base + '/products?cat=software' },
+  { key: 'edge', href: base + '/products?cat=edge' },
+  { key: 'sensor', href: base + '/products?cat=sensor' },
+  { key: 'connect', href: base + '/products?cat=connect' },
+  { key: 'auto', href: base + '/products?cat=auto' },
 ];
 
-const industries = [
-  { n: '01', label: t('home.industry1') },
-  { n: '02', label: t('home.industry2') },
-  { n: '03', label: t('home.industry3') },
-  { n: '04', label: t('home.industry4') },
-];
+const industries = (site.home?.industries ?? []).map((it: { label: string }, i: number) => ({
+  n: String(i + 1).padStart(2, '0'),
+  label: it.label
+}));
 
-const stats = [
-  { v: t('home.stat1Value'), l: t('home.stat1Label') },
-  { v: t('home.stat2Value'), l: t('home.stat2Label') },
-  { v: t('home.stat3Value'), l: t('home.stat3Label') },
-  { v: t('home.stat4Value'), l: t('home.stat4Label') },
-];
+const stats = (site.home?.stats ?? []).map((s: { value: string; label: string }) => ({
+  v: s.value,
+  l: s.label
+}));
 ---
 <BaseLayout lang={lang} title={t('hero.title') + ' | DAQ-IOT'} description={t('hero.subtitle')}>
 
@@ -67,8 +59,8 @@ const stats = [
           <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-4">
             <span class="text-brand font-bold text-lg">AI+</span>
           </div>
-          <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{t('cat.' + f.key)}</h3>
-          <p class="mt-2 text-sm text-slate-500 leading-relaxed">{f.desc}</p>
+            <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{t('cat.' + f.key)}</h3>
+            <p class="mt-2 text-sm text-slate-500 leading-relaxed">{t('home.catDesc' + f.key.charAt(0).toUpperCase() + f.key.slice(1))}</p>
           <span class="mt-4 inline-flex items-center text-sm font-medium text-brand">{t('home.viewAll')} →</span>
         </a>
       ))}

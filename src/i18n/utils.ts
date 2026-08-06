@@ -9,20 +9,25 @@ export function useTranslations(lang: Lang) {
   };
 }
 
-// 新异步方式：从 content collections 读取 translations 集合（body 为 JSON 字符串）
+// 新异步方式：从 content collections 读取 translations 集合（frontmatter 为嵌套对象）
 export async function getTranslations(lang: Lang) {
-  const entries = await getCollection('translations', (entry) => entry.id.startsWith(lang + '/'));
-  const raw = entries[0]?.body?.trim() || '{}';
-  let data: Record<string, string> = {};
-  try {
-    data = JSON.parse(raw) as Record<string, string>;
-  } catch {
-    data = {};
-  }
+  const data = await getRawSite(lang);
   return function t(key: string, fallback?: string): string {
-    const value = data[key];
+    const value = key.split('.').reduce<any>((o, k) => (o == null ? undefined : o[k]), data);
     return typeof value === 'string' ? value : (fallback ?? key);
   };
+}
+
+// 返回完整嵌套对象，供首页等需要读取列表（行业、指标）的页面使用
+export async function getSiteData(lang: Lang): Promise<Record<string, any>> {
+  const data = await getRawSite(lang);
+  const { name, ...rest } = data;
+  return rest;
+}
+
+async function getRawSite(lang: Lang): Promise<Record<string, any>> {
+  const entries = await getCollection('translations', (entry) => entry.id.startsWith(lang + '/'));
+  return (entries[0]?.data ?? {}) as Record<string, any>;
 }
 
 // 去掉当前路径的语言前缀，返回纯路径（如 /en/about -> /about）

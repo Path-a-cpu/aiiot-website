@@ -1,108 +1,124 @@
 ---
 name: site
+nav:
+  home: Home
+  about: About
+  products: Products
+  solutions: Solutions
+  services: Services
+  partners: Partners
+  support: Support
+  contact: Contact
+  cta: Get a Quote
+cat:
+  software: AI+ Software
+  edge: AI+ Edge Computing
+  sensor: AI+ Sensors
+  connect: AI+ Connectivity
+  auto: AI+ Automation
+hero:
+  title: Industrial IoT AIIOT Solutions Expert
+  subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.
+  ctaPrimary: Get a Quote
+  ctaSecondary: View Products
+home:
+  eyebrow: AIIOT | Connecting the Universe of Intelligence
+  heroTitle: Giving Every Device Perception and Intelligence
+  heroSubtitle: From wireless sensors and edge gateways to SCADA and energy-management platforms, DAQ-IOT provides an end-to-cloud industrial IoT stack for smart manufacturing and new energy.
+  heroCta1: Get a Quote
+  heroCta2: View Products
+  categoriesTitle: AI+ Five Product Families
+  categoriesSubtitle: Covering the full industrial IoT chain from sensing and edge to cloud
+  viewAll: View All Products
+  catDescSoftware: SCADA · Meter Reading · Data Dashboards · EMS · PV O&M Cloud
+  catDescEdge: Edge Gateways · Protocol Communication Managers
+  catDescSensor: CT Current · IR Temperature · Level · Wireless Vibration · Speed
+  catDescConnect: Industrial Switches · Cellular Routers · Serial Servers · Optical Modules
+  catDescAuto: Wireless Andon · IO Servers · RS485 Splitters
+  solutionsTitle: Industry Solutions
+  solutionsSubtitle: Deep expertise in smart manufacturing and new energy for digital transformation
+  industries:
+    - label: Smart Manufacturing
+    - label: PV & New Energy
+    - label: Smart City
+    - label: Power & Energy
+  statsTitle: DAQ-IOT · The Data Foundation
+  stats:
+    - value: National
+      label: High-Tech Enterprise
+    - value: 4+
+      label: Global Service Sites
+    - value: 24h
+      label: Fast Response
+    - value: Full-Stack
+      label: Industrial IoT Solutions
+  partnersTitle: Partners & Ecosystem
+  partnersSubtitle: Building the industrial IoT ecosystem with industry leaders
+  ctaTitle: Start Your Smart Factory Project
+  ctaSubtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
+  ctaButton: Contact Us Now
+features:
+  title: Why DAQ-IOT
+  subtitle: National high-tech enterprise focused on industrial IoT and digital transformation
+  feature1Title: National High-Tech Enterprise
+  feature1Desc: Certified national high-tech company with R&D strength in industrial IoT.
+  feature2Title: End-to-End IoT Solutions
+  feature2Desc: From wireless sensors to SCADA and EMS platforms, we cover the full stack.
+  feature3Title: Smart Manufacturing
+  feature3Desc: Digital factory solutions that improve efficiency and reduce downtime.
+  feature4Title: New Energy Monitoring
+  feature4Desc: PV and renewable energy monitoring systems for sustainable operations.
+  feature5Title: Multi-Region Service
+  feature5Desc: Service centers in Shanghai, Henan, Zhengzhou and Bangladesh.
+  feature6Title: Fast Response
+  feature6Desc: "Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032."
+cta:
+  title: Start Your Smart Factory Project
+  subtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
+  button: Contact Us Now
+about:
+  title: About DAQ-IOT
+  p1: Shanghai DAQ-IOT Technology Co., Ltd. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.
+  p2: Our solutions serve smart manufacturing, PV new energy and other industries. With service locations in Shanghai, Henan, Zhengzhou and Bangladesh, we support global clients with reliable products and local service.
+  p3: Contact us at business@daq-iot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.
+products:
+  title: Products & Solutions
+  subtitle: Industrial IoT hardware and software for data acquisition, monitoring and management
+  back: Back to Products
+  all: All Products
+  empty: No products in this category yet. Contact us for customization.
+contact:
+  title: Contact Us
+  subtitle: Tell us what you need — we usually reply within 24 hours.
+  infoTitle: Contact Information
+  name: Your Name
+  email: Email
+  company: Company
+  message: Your Message
+  submit: Send Inquiry
+  success: Thank you! We will contact you within 24 hours.
+  phone: Phone
+  mobile: Mobile / WhatsApp
+  person: Contact Person
+  address: Address
+solutions:
+  title: Industry Solutions
+  subtitle: End-to-end solutions for smart manufacturing, PV new energy, smart city and power & energy
+  p1: Built around AI+ software and edge hardware, we deliver complete solutions from data acquisition and real-time monitoring to intelligent decision-making.
+services:
+  title: Services & Support
+  subtitle: From consulting and deployment to training and O&M — we accompany your digital transformation
+partners:
+  title: Partners
+  subtitle: Building the industrial IoT ecosystem with channel partners, integrators and customers
+support:
+  title: Technical Support
+  subtitle: Documentation, RMA and training resources to keep your systems running
+footer:
+  contact: Contact
+  products: Products
+  solutions: Solutions
+  company: Company
+  rights: Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.
+  tagline: Making Data Collection Simpler.
 ---
-
-{
-  "site.name": "DAQ-IOT",
-  "site.fullName": "DAQ-IOT Technology",
-  "nav.home": "Home",
-  "nav.about": "About",
-  "nav.products": "Products",
-  "nav.solutions": "Solutions",
-  "nav.services": "Services",
-  "nav.partners": "Partners",
-  "nav.support": "Support",
-  "nav.contact": "Contact",
-  "nav.cta": "Get a Quote",
-  "cat.software": "AI+ Software",
-  "cat.edge": "AI+ Edge Computing",
-  "cat.sensor": "AI+ Sensors",
-  "cat.connect": "AI+ Connectivity",
-  "cat.auto": "AI+ Automation",
-  "hero.title": "Industrial IoT AIIOT Solutions Expert",
-  "hero.subtitle": "DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.",
-  "hero.ctaPrimary": "Get a Quote",
-  "hero.ctaSecondary": "View Products",
-  "home.eyebrow": "AIIOT | Connecting the Universe of Intelligence",
-  "home.heroTitle": "Giving Every Device Perception and Intelligence",
-  "home.heroSubtitle": "From wireless sensors and edge gateways to SCADA and energy-management platforms, DAQ-IOT provides an end-to-cloud industrial IoT stack for smart manufacturing and new energy.",
-  "home.heroCta1": "Get a Quote",
-  "home.heroCta2": "View Products",
-  "home.categoriesTitle": "AI+ Five Product Families",
-  "home.categoriesSubtitle": "Covering the full industrial IoT chain from sensing and edge to cloud",
-  "home.viewAll": "View All Products",
-  "home.solutionsTitle": "Industry Solutions",
-  "home.solutionsSubtitle": "Deep expertise in smart manufacturing and new energy for digital transformation",
-  "home.industry1": "Smart Manufacturing",
-  "home.industry2": "PV & New Energy",
-  "home.industry3": "Smart City",
-  "home.industry4": "Power & Energy",
-  "home.statsTitle": "DAQ-IOT · The Data Foundation",
-  "home.stat1Value": "National",
-  "home.stat1Label": "High-Tech Enterprise",
-  "home.stat2Value": "4+",
-  "home.stat2Label": "Global Service Sites",
-  "home.stat3Value": "24h",
-  "home.stat3Label": "Fast Response",
-  "home.stat4Value": "Full-Stack",
-  "home.stat4Label": "Industrial IoT Solutions",
-  "home.partnersTitle": "Partners & Ecosystem",
-  "home.partnersSubtitle": "Building the industrial IoT ecosystem with industry leaders",
-  "home.ctaTitle": "Start Your Smart Factory Project",
-  "home.ctaSubtitle": "Send your requirements and get a tailored IoT solution quote within 24 hours.",
-  "home.ctaButton": "Contact Us Now",
-  "features.title": "Why DAQ-IOT",
-  "features.subtitle": "National high-tech enterprise focused on industrial IoT and digital transformation",
-  "feature1Title": "National High-Tech Enterprise",
-  "feature1Desc": "Certified national high-tech company with R&D strength in industrial IoT.",
-  "feature2Title": "End-to-End IoT Solutions",
-  "feature2Desc": "From wireless sensors to SCADA and EMS platforms, we cover the full stack.",
-  "feature3Title": "Smart Manufacturing",
-  "feature3Desc": "Digital factory solutions that improve efficiency and reduce downtime.",
-  "feature4Title": "New Energy Monitoring",
-  "feature4Desc": "PV and renewable energy monitoring systems for sustainable operations.",
-  "feature5Title": "Multi-Region Service",
-  "feature5Desc": "Service centers in Shanghai, Henan, Zhengzhou and Bangladesh.",
-  "feature6Title": "Fast Response",
-  "feature6Desc": "Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032.",
-  "cta.title": "Start Your Smart Factory Project",
-  "cta.subtitle": "Send your requirements and get a tailored IoT solution quote within 24 hours.",
-  "cta.button": "Contact Us Now",
-  "about.title": "About DAQ-IOT",
-  "about.p1": "Shanghai DAQ-IOT Technology Co., Ltd. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.",
-  "about.p2": "Our solutions serve smart manufacturing, PV new energy and other industries. With service locations in Shanghai, Henan, Zhengzhou and Bangladesh, we support global clients with reliable products and local service.",
-  "about.p3": "Contact us at business@daq-iot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.",
-  "products.title": "Products & Solutions",
-  "products.subtitle": "Industrial IoT hardware and software for data acquisition, monitoring and management",
-  "products.back": "Back to Products",
-  "products.all": "All Products",
-  "products.empty": "No products in this category yet. Contact us for customization.",
-  "contact.title": "Contact Us",
-  "contact.subtitle": "Tell us what you need — we usually reply within 24 hours.",
-  "contact.infoTitle": "Contact Information",
-  "contact.name": "Your Name",
-  "contact.email": "Email",
-  "contact.company": "Company",
-  "contact.message": "Your Message",
-  "contact.submit": "Send Inquiry",
-  "contact.success": "Thank you! We will contact you within 24 hours.",
-  "contact.phone": "Phone",
-  "contact.mobile": "Mobile / WhatsApp",
-  "contact.person": "Contact Person",
-  "contact.address": "Address",
-  "solutions.title": "Industry Solutions",
-  "solutions.subtitle": "End-to-end solutions for smart manufacturing, PV new energy, smart city and power & energy",
-  "solutions.p1": "Built around AI+ software and edge hardware, we deliver complete solutions from data acquisition and real-time monitoring to intelligent decision-making.",
-  "services.title": "Services & Support",
-  "services.subtitle": "From consulting and deployment to training and O&M — we accompany your digital transformation",
-  "partners.title": "Partners",
-  "partners.subtitle": "Building the industrial IoT ecosystem with channel partners, integrators and customers",
-  "support.title": "Technical Support",
-  "support.subtitle": "Documentation, RMA and training resources to keep your systems running",
-  "footer.contact": "Contact",
-  "footer.products": "Products",
-  "footer.solutions": "Solutions",
-  "footer.company": "Company",
-  "footer.rights": "Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.",
-  "footer.tagline": "Making Data Collection Simpler."
-}

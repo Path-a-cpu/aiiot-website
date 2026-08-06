@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 const translations = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/translations' }),
-  schema: z.object({})
+  schema: z.object({ name: z.string().optional() }).passthrough()
 });
 
 const products = defineCollection({
