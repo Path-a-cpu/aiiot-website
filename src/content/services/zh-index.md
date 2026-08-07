@@ -1,4 +1,5 @@
 ---
+editor_lang: 中文
 title: 服务与支持
 subtitle: 从方案咨询、部署实施到运维培训，全程陪伴您的数字化转型
 items:

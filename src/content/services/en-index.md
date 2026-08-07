@@ -1,4 +1,5 @@
 ---
+editor_lang: 英文
 title: Services & Support
 subtitle: From consulting and deployment to training and O&M — we accompany your digital transformation
 items:

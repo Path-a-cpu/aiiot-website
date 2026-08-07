@@ -1,4 +1,5 @@
 ---
+editor_lang: 英文
 title: Technical Support
 subtitle: Documentation, RMA and training resources to keep your systems running
 items:

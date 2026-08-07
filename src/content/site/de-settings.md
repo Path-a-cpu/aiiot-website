@@ -1,4 +1,5 @@
 ---
+editor_lang: 德文
 name: settings
 nav:
   home: Start

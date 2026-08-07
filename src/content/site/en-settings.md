@@ -1,4 +1,5 @@
 ---
+editor_lang: 英文
 name: settings
 nav:
   home: Home

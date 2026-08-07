@@ -1,4 +1,5 @@
 ---
+editor_lang: 德文
 title: Branchenlösungen
 subtitle: End-to-End-Lösungen für smarte Fertigung, PV-Neuenergie, Smart City und Energie & Strom
 p1: Rund um KI+ Software und Edge-Hardware liefern wir komplette Lösungen von der Datenerfassung und Echtzeitüberwachung bis zur intelligenten Entscheidungsfindung.

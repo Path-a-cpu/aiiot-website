@@ -1,4 +1,5 @@
 ---
+editor_lang: 德文
 title: Partner
 subtitle: Aufbau des Industrial-IoT-Ökosystems mit Channel-Partnern, Integratoren und Kunden
 items:

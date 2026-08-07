@@ -1,4 +1,5 @@
 ---
+editor_lang: 英文
 title: Partners
 subtitle: Building the industrial IoT ecosystem with channel partners, integrators and customers
 items:

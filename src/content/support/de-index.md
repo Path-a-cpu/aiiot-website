@@ -1,4 +1,5 @@
 ---
+editor_lang: 德文
 title: Technischer Support
 subtitle: Dokumentation, RMA und Schulungsressourcen für den stabilen Betrieb Ihrer Systeme
 items:

@@ -1,4 +1,5 @@
 ---
+editor_lang: 中文
 title: 合作伙伴
 subtitle: 与渠道伙伴、集成商及行业客户共建工业物联网生态
 items:

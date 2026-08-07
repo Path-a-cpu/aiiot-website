@@ -1,4 +1,5 @@
 ---
+editor_lang: 德文
 title: Service & Support
 subtitle: Von Beratung und Implementierung bis zu Schulung und Betrieb – wir begleiten Ihre digitale Transformation
 items:

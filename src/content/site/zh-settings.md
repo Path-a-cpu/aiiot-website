@@ -1,4 +1,5 @@
 ---
+editor_lang: 中文
 name: settings
 nav:
   home: 首页

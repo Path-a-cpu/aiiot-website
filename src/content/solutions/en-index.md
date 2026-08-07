@@ -1,4 +1,5 @@
 ---
+editor_lang: 英文
 title: Industry Solutions
 subtitle: End-to-end solutions for smart manufacturing, PV new energy, smart city and power & energy
 p1: Built around AI+ software and edge hardware, we deliver complete solutions from data acquisition and real-time monitoring to intelligent decision-making.

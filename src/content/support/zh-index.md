@@ -1,4 +1,5 @@
 ---
+editor_lang: 中文
 title: 技术支持
 subtitle: 提供文档、RMA 与培训资源，保障系统稳定运行
 items:
