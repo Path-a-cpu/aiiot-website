@@ -164,6 +164,13 @@ collections:
           - { name: title, label: 标题, widget: string, i18n: true }
           - { name: subtitle, label: 副标题, widget: text, i18n: true }
           - { name: p1, label: 段落, widget: text, i18n: true }
+          - label: 方案列表(可增删)
+            name: items
+            widget: list
+            i18n: true
+            fields:
+              - { name: title, label: 方案标题, widget: string, i18n: true }
+              - { name: desc, label: 方案描述, widget: text, i18n: true }
       - label: 服务页
         name: services
         widget: object
