@@ -1,5 +1,5 @@
 ---
-name: site
+name: settings
 nav:
   home: 首页
   about: 关于我们
@@ -101,60 +101,6 @@ contact:
   mobile: 手机 / WhatsApp
   person: 联系人
   address: 地址
-solutions:
-  title: 行业解决方案
-  subtitle: 面向智能制造、光伏新能源、智慧城市与电力能源的端到端解决方案
-  p1: 我们以 AI+ 软件与边缘硬件为核心，为各行业提供从数据采集、实时监控到智能决策的整体方案。
-  items:
-    - title: 智能制造
-      desc: 面向离散制造与流程工业，提供设备联网、OEE 看板、预测性维护与 MES 数据采集方案。
-    - title: 光伏新能源
-      desc: 分布式光伏运维、电站数据监控、发电量分析与故障预警一体化平台。
-    - title: 智慧城市
-      desc: 城市基础设施感知网络，覆盖管廊、水务、路灯、环境等多场景物联监测。
-    - title: 电力与能源
-      desc: 配电房无人值守、能耗采集、需量管理与电力运维移动化解决方案。
-services:
-  title: 服务与支持
-  subtitle: 从方案咨询、部署实施到运维培训，全程陪伴您的数字化转型
-  items:
-    - title: 方案咨询
-      desc: 基于现场需求提供选型与架构建议，输出可落地的物联网方案。
-    - title: 部署实施
-      desc: 传感器安装、网关配置、平台对接一站式交付。
-    - title: 运维培训
-      desc: 面向工程师与管理人员的产品使用与维护培训。
-    - title: 定制开发
-      desc: 按行业场景定制数据采集、监控与看板功能。
-partners:
-  title: 合作伙伴
-  subtitle: 与渠道伙伴、集成商及行业客户共建工业物联网生态
-  items:
-    - title: 渠道伙伴
-      desc: 区域代理与经销商，共享市场与渠道资源。
-    - title: 系统集成商
-      desc: 面向自动化与信息化集成商的项目协作。
-    - title: 行业客户
-      desc: 制造、能源、水务等行业的直接合作客户。
-  resourcesTitle: 资料中心
-  resourcesSubtitle: 产品彩页、认证证书与白皮书，供合作伙伴下载使用
-  resources:
-    - title: 产品彩页
-      desc: 各产品系列高清彩页与规格速览。
-    - title: 认证证书
-      desc: 高新技术企业、CE/ROHS 等资质文件。
-    - title: 白皮书
-      desc: 行业解决方案与技术架构白皮书。
-support:
-  title: 技术支持
-  subtitle: 提供文档、RMA 与培训资源，保障系统稳定运行
-  items:
-    - title: 文档中心
-      desc: 产品手册、接线图、配置指南与 API 文档。
-    - title: RMA 服务
-      desc: 售后返修与质保流程，快速响应故障设备。
-    - title: 培训资源
-      desc: 在线视频与现场培训，提升运维能力。
 footer:
   contact: 联系方式
   products: 产品

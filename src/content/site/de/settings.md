@@ -1,5 +1,5 @@
 ---
-name: site
+name: settings
 nav:
   home: Start
   about: Über uns
@@ -71,7 +71,7 @@ features:
   feature5Title: Multi-Region-Service
   feature5Desc: Servicestandorte in Shanghai, Henan, Zhengzhou und Bangladesch.
   feature6Title: Schnelle Reaktion
-  feature6Desc: "Dediziertes Team antwortet innerhalb von 24 Stunden. Hotline: 400-9677-032."
+  feature6Desc: 'Dediziertes Team antwortet innerhalb von 24 Stunden. Hotline: 400-9677-032.'
 cta:
   title: Starten Sie Ihr Smart-Factory-Projekt
   subtitle: Senden Sie Ihre Anforderungen und erhalten Sie innerhalb von 24 Stunden ein maßgeschneidertes IoT-Angebot.
@@ -101,60 +101,6 @@ contact:
   mobile: Mobil / WhatsApp
   person: Ansprechpartner
   address: Adresse
-solutions:
-  title: Branchenlösungen
-  subtitle: End-to-End-Lösungen für smarte Fertigung, PV-Neuenergie, Smart City und Energie & Strom
-  p1: Rund um KI+ Software und Edge-Hardware liefern wir komplette Lösungen von der Datenerfassung und Echtzeitüberwachung bis zur intelligenten Entscheidungsfindung.
-  items:
-    - title: Smarte Fertigung
-      desc: Gerätevernetzung, OEE-Dashboards, vorausschauende Wartung und MES-Datenerfassung für diskrete und prozessorientierte Fertigung.
-    - title: PV-Neuenergie
-      desc: Verteilte PV-Betriebsführung, Anlagenüberwachung, Ertragsanalyse und Fehleralarme in einer Plattform.
-    - title: Smart City
-      desc: Sensornetzwerke für städtische Infrastruktur wie Versorgungstunnel, Wasser, Straßenbeleuchtung und Umweltüberwachung.
-    - title: Energie & Strom
-      desc: Unbemannte Schaltstationen, Energieverbrauchserfassung, Bedarfsmanagement und mobile Strom-O&M-Lösungen.
-services:
-  title: Service & Support
-  subtitle: Von Beratung und Implementierung bis zu Schulung und Betrieb – wir begleiten Ihre digitale Transformation
-  items:
-    - title: Beratung
-      desc: Auswahl- und Architekturempfehlungen basierend auf Bedarf vor Ort, mit umsetzbaren IoT-Plänen.
-    - title: Implementierung
-      desc: Sensorinstallation, Gateway-Konfiguration und Plattformintegration aus einer Hand.
-    - title: Schulung
-      desc: Produktschulungen für Ingenieure und Manager zu Bedienung und Wartung.
-    - title: Individuelle Entwicklung
-      desc: Maßgeschneiderte Datenerfassungs-, Überwachungs- und Dashboard-Funktionen je Branche.
-partners:
-  title: Partner
-  subtitle: Aufbau des Industrial-IoT-Ökosystems mit Channel-Partnern, Integratoren und Kunden
-  items:
-    - title: Channel-Partner
-      desc: Regionale Vertriebspartner und Distributoren mit gemeinsamen Markt- und Kanalressourcen.
-    - title: Systemintegratoren
-      desc: Projektzusammenarbeit mit Automatisierungs- und IT-Systemintegratoren.
-    - title: Industriekunden
-      desc: Direkte Zusammenarbeit mit Kunden aus Fertigung, Energie, Wasser u. a.
-  resourcesTitle: Ressourcen-Center
-  resourcesSubtitle: Produktbroschüren, Zertifikate und Whitepaper zum Download für Partner.
-  resources:
-    - title: Produktbroschüren
-      desc: Hochauflösende Broschüren und Spezifikationsüberblicke je Produktfamilie.
-    - title: Zertifikate
-      desc: High-Tech-Unternehmen, CE/ROHS und weitere Qualifikationsunterlagen.
-    - title: Whitepaper
-      desc: Whitepaper zu Branchenlösungen und Technikarchitektur.
-support:
-  title: Technischer Support
-  subtitle: Dokumentation, RMA und Schulungsressourcen für den stabilen Betrieb Ihrer Systeme
-  items:
-    - title: Dokumentation
-      desc: Produkthandbücher, Schaltpläne, Konfigurationsleitfäden und API-Dokumentation.
-    - title: RMA-Service
-      desc: After-Sales-Reparatur und Garantieprozess mit schneller Reaktion auf defekte Geräte.
-    - title: Schulungsressourcen
-      desc: Online-Videos und Vor-Ort-Schulungen zur Stärkung der O&M-Kompetenz.
 footer:
   contact: Kontakt
   products: Produkte

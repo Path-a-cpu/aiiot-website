@@ -1,8 +1,28 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-const translations = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/translations' }),
+const site = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/site' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
+const solutions = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/solutions' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
+const services = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/services' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
+const partners = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/partners' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
+const support = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/support' }),
   schema: z.object({ name: z.string().optional() }).passthrough()
 });
 
@@ -29,7 +49,11 @@ const posts = defineCollection({
 });
 
 export const collections = {
-  translations,
+  site,
+  solutions,
+  services,
+  partners,
+  support,
   products,
   posts
 };

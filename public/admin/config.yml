@@ -16,9 +16,9 @@ i18n:
   default_locale: zh
 
 collections:
-  - name: translations
-    label: 网站文案
-    folder: src/content/translations
+  - name: site
+    label: 网站基础文案
+    folder: src/content/site
     i18n: true
     create: false
     delete: false
@@ -26,10 +26,7 @@ collections:
     format: frontmatter
     identifier_field: name
     fields:
-      - label: 标识名
-        name: name
-        widget: string
-        i18n: duplicate
+      - { name: name, label: 标识名, widget: hidden, i18n: duplicate }
       - label: 导航栏
         name: nav
         widget: object
@@ -157,68 +154,6 @@ collections:
           - { name: mobile, label: 手机/WhatsApp标签, widget: string, i18n: true }
           - { name: person, label: 联系人标签, widget: string, i18n: true }
           - { name: address, label: 地址标签, widget: string, i18n: true }
-      - label: 解决方案页
-        name: solutions
-        widget: object
-        fields:
-          - { name: title, label: 标题, widget: string, i18n: true }
-          - { name: subtitle, label: 副标题, widget: text, i18n: true }
-          - { name: p1, label: 段落, widget: text, i18n: true }
-          - label: 方案列表(可增删)
-            name: items
-            widget: list
-            i18n: true
-            fields:
-              - { name: title, label: 方案标题, widget: string, i18n: true }
-              - { name: desc, label: 方案描述, widget: text, i18n: true }
-      - label: 服务页
-        name: services
-        widget: object
-        fields:
-          - { name: title, label: 标题, widget: string, i18n: true }
-          - { name: subtitle, label: 副标题, widget: text, i18n: true }
-          - label: 服务列表(可增删)
-            name: items
-            widget: list
-            i18n: true
-            fields:
-              - { name: title, label: 服务标题, widget: string, i18n: true }
-              - { name: desc, label: 服务描述, widget: text, i18n: true }
-      - label: 合作伙伴页
-        name: partners
-        widget: object
-        fields:
-          - { name: title, label: 标题, widget: string, i18n: true }
-          - { name: subtitle, label: 副标题, widget: text, i18n: true }
-          - label: 合作伙伴类型(可增删)
-            name: items
-            widget: list
-            i18n: true
-            fields:
-              - { name: title, label: 类型标题, widget: string, i18n: true }
-              - { name: desc, label: 类型描述, widget: text, i18n: true }
-          - { name: resourcesTitle, label: 资料区标题, widget: string, i18n: true }
-          - { name: resourcesSubtitle, label: 资料区副标题, widget: text, i18n: true }
-          - label: 资料列表(可增删)
-            name: resources
-            widget: list
-            i18n: true
-            fields:
-              - { name: title, label: 资料标题, widget: string, i18n: true }
-              - { name: desc, label: 资料描述, widget: text, i18n: true }
-      - label: 技术支持页
-        name: support
-        widget: object
-        fields:
-          - { name: title, label: 标题, widget: string, i18n: true }
-          - { name: subtitle, label: 副标题, widget: text, i18n: true }
-          - label: 支持列表(可增删)
-            name: items
-            widget: list
-            i18n: true
-            fields:
-              - { name: title, label: 支持标题, widget: string, i18n: true }
-              - { name: desc, label: 支持描述, widget: text, i18n: true }
       - label: 页脚
         name: footer
         widget: object
@@ -229,6 +164,100 @@ collections:
           - { name: company, label: 公司标题, widget: string, i18n: true }
           - { name: rights, label: 版权信息, widget: string, i18n: true }
           - { name: tagline, label: 标语, widget: string, i18n: true }
+
+  - name: solutions
+    label: 解决方案
+    folder: src/content/solutions
+    i18n: true
+    create: false
+    delete: false
+    extension: md
+    format: frontmatter
+    identifier_field: name
+    fields:
+      - { name: name, label: 标识名, widget: hidden, i18n: duplicate }
+      - { name: title, label: 标题, widget: string, i18n: true }
+      - { name: subtitle, label: 副标题, widget: text, i18n: true }
+      - { name: p1, label: 段落, widget: text, i18n: true }
+      - label: 方案列表(可增删)
+        name: items
+        widget: list
+        i18n: true
+        fields:
+          - { name: title, label: 方案标题, widget: string, i18n: true }
+          - { name: desc, label: 方案描述, widget: text, i18n: true }
+
+  - name: services
+    label: 服务与支持
+    folder: src/content/services
+    i18n: true
+    create: false
+    delete: false
+    extension: md
+    format: frontmatter
+    identifier_field: name
+    fields:
+      - { name: name, label: 标识名, widget: hidden, i18n: duplicate }
+      - { name: title, label: 标题, widget: string, i18n: true }
+      - { name: subtitle, label: 副标题, widget: text, i18n: true }
+      - label: 服务列表(可增删)
+        name: items
+        widget: list
+        i18n: true
+        fields:
+          - { name: title, label: 服务标题, widget: string, i18n: true }
+          - { name: desc, label: 服务描述, widget: text, i18n: true }
+
+  - name: partners
+    label: 合作伙伴
+    folder: src/content/partners
+    i18n: true
+    create: false
+    delete: false
+    extension: md
+    format: frontmatter
+    identifier_field: name
+    fields:
+      - { name: name, label: 标识名, widget: hidden, i18n: duplicate }
+      - { name: title, label: 标题, widget: string, i18n: true }
+      - { name: subtitle, label: 副标题, widget: text, i18n: true }
+      - label: 合作伙伴类型(可增删)
+        name: items
+        widget: list
+        i18n: true
+        fields:
+          - { name: title, label: 类型标题, widget: string, i18n: true }
+          - { name: desc, label: 类型描述, widget: text, i18n: true }
+      - { name: resourcesTitle, label: 资料区标题, widget: string, i18n: true }
+      - { name: resourcesSubtitle, label: 资料区副标题, widget: text, i18n: true }
+      - label: 资料列表(可增删)
+        name: resources
+        widget: list
+        i18n: true
+        fields:
+          - { name: title, label: 资料标题, widget: string, i18n: true }
+          - { name: desc, label: 资料描述, widget: text, i18n: true }
+
+  - name: support
+    label: 技术支持
+    folder: src/content/support
+    i18n: true
+    create: false
+    delete: false
+    extension: md
+    format: frontmatter
+    identifier_field: name
+    fields:
+      - { name: name, label: 标识名, widget: hidden, i18n: duplicate }
+      - { name: title, label: 标题, widget: string, i18n: true }
+      - { name: subtitle, label: 副标题, widget: text, i18n: true }
+      - label: 支持列表(可增删)
+        name: items
+        widget: list
+        i18n: true
+        fields:
+          - { name: title, label: 支持标题, widget: string, i18n: true }
+          - { name: desc, label: 支持描述, widget: text, i18n: true }
 
   - name: products
     label: 产品

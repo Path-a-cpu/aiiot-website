@@ -1,5 +1,5 @@
 ---
-name: site
+name: settings
 nav:
   home: Home
   about: About
@@ -71,7 +71,7 @@ features:
   feature5Title: Multi-Region Service
   feature5Desc: Service centers in Shanghai, Henan, Zhengzhou and Bangladesh.
   feature6Title: Fast Response
-  feature6Desc: "Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032."
+  feature6Desc: 'Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032.'
 cta:
   title: Start Your Smart Factory Project
   subtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
@@ -101,60 +101,6 @@ contact:
   mobile: Mobile / WhatsApp
   person: Contact Person
   address: Address
-solutions:
-  title: Industry Solutions
-  subtitle: End-to-end solutions for smart manufacturing, PV new energy, smart city and power & energy
-  p1: Built around AI+ software and edge hardware, we deliver complete solutions from data acquisition and real-time monitoring to intelligent decision-making.
-  items:
-    - title: Smart Manufacturing
-      desc: Device connectivity, OEE dashboards, predictive maintenance and MES data acquisition for discrete and process manufacturing.
-    - title: PV New Energy
-      desc: Distributed PV O&M, plant data monitoring, power generation analytics and fault alerting in one platform.
-    - title: Smart City
-      desc: Urban infrastructure sensing networks covering utility tunnels, water, street lighting and environmental monitoring.
-    - title: Power & Energy
-      desc: Unmanned substations, energy consumption acquisition, demand management and mobile power O&M solutions.
-services:
-  title: Services & Support
-  subtitle: From consulting and deployment to training and O&M — we accompany your digital transformation
-  items:
-    - title: Consulting
-      desc: Selection and architecture advice based on on-site needs, delivering actionable IoT plans.
-    - title: Deployment
-      desc: One-stop delivery of sensor installation, gateway configuration and platform integration.
-    - title: Training
-      desc: Product usage and maintenance training for engineers and managers.
-    - title: Custom Development
-      desc: Tailored data acquisition, monitoring and dashboard features per industry scenario.
-partners:
-  title: Partners
-  subtitle: Building the industrial IoT ecosystem with channel partners, integrators and customers
-  items:
-    - title: Channel Partners
-      desc: Regional agents and distributors sharing market and channel resources.
-    - title: System Integrators
-      desc: Project collaboration with automation and IT system integrators.
-    - title: Industry Customers
-      desc: Direct cooperation with customers in manufacturing, energy, water and other sectors.
-  resourcesTitle: Resource Center
-  resourcesSubtitle: Product brochures, certificates and whitepapers for partners to download.
-  resources:
-    - title: Product Brochures
-      desc: High-resolution brochures and spec overviews for each product family.
-    - title: Certificates
-      desc: High-tech enterprise, CE/ROHS and other qualification documents.
-    - title: Whitepapers
-      desc: Industry solution and technical architecture whitepapers.
-support:
-  title: Technical Support
-  subtitle: Documentation, RMA and training resources to keep your systems running
-  items:
-    - title: Documentation
-      desc: Product manuals, wiring diagrams, configuration guides and API docs.
-    - title: RMA Service
-      desc: After-sales repair and warranty process with fast response for faulty devices.
-    - title: Training Resources
-      desc: Online videos and on-site training to boost O&M capability.
 footer:
   contact: Contact
   products: Products

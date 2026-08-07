@@ -9,7 +9,7 @@ export function useTranslations(lang: Lang) {
   };
 }
 
-// 新异步方式：从 content collections 读取 translations 集合（frontmatter 为嵌套对象）
+// 新异步方式：从 content collections 读取各集合并合并（frontmatter 为嵌套对象）
 export async function getTranslations(lang: Lang) {
   const data = await getRawSite(lang);
   return function t(key: string, fallback?: string): string {
@@ -25,9 +25,27 @@ export async function getSiteData(lang: Lang): Promise<Record<string, any>> {
   return rest;
 }
 
-async function getRawSite(lang: Lang): Promise<Record<string, any>> {
-  const entries = await getCollection('translations', (entry) => entry.id.startsWith(lang + '/'));
+async function loadCollectionData(lang: Lang, collection: string): Promise<Record<string, any>> {
+  const entries = await getCollection(collection as any, (entry) => entry.id.startsWith(lang + '/'));
   return (entries[0]?.data ?? {}) as Record<string, any>;
+}
+
+async function getRawSite(lang: Lang): Promise<Record<string, any>> {
+  const [siteData, solutionsData, servicesData, partnersData, supportData] = await Promise.all([
+    loadCollectionData(lang, 'site'),
+    loadCollectionData(lang, 'solutions'),
+    loadCollectionData(lang, 'services'),
+    loadCollectionData(lang, 'partners'),
+    loadCollectionData(lang, 'support'),
+  ]);
+
+  return {
+    ...siteData,
+    solutions: solutionsData,
+    services: servicesData,
+    partners: partnersData,
+    support: supportData,
+  };
 }
 
 // 去掉当前路径的语言前缀，返回纯路径（如 /en/about -> /about）
