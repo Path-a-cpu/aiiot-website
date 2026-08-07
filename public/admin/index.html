@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aiiot 内容管理后台</title>
     <style>
-      /* Decap CMS 多语言分栏滚动修复：兼容 CSS-in-JS 生成的类名 */
+      /* Decap CMS 多语言分栏滚动修复 */
       html, body, #nc-root {
         height: 100%;
         overflow: hidden;
       }
-      /* SplitPane 容器撑满 */
       [class*="SplitPane"] {
         height: 100vh !important;
       }
-      /* SplitPane 下的直接子 div（除了 Resizer）就是左右 Pane */
-      [class*="SplitPane"] > div:not([class*="Resizer"]) {
+      /* SplitPane 下所有直接子 div（面板）都可滚动，Resizer 除外 */
+      [class*="SplitPane"] > div {
         overflow-y: auto !important;
         height: 100% !important;
       }
-      [class*="Resizer"] {
-        z-index: 10;
-        background: #e2e8f0;
+      [class*="SplitPane"] > [class*="Resizer"] {
+        overflow: visible !important;
+        width: 8px !important;
+        background: #e2e8f0 !important;
       }
     </style>
   </head>
@@ -29,49 +29,60 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       (function () {
-        function fixSplitPaneScroll() {
-          // 通过 Resizer 定位 SplitPane，再给它的 pane 子元素加滚动
+        function findPanes() {
+          var panes = [];
           document.querySelectorAll('[class*="Resizer"]').forEach(function (resizer) {
             var splitPane = resizer.parentElement;
             if (!splitPane) return;
             Array.from(splitPane.children).forEach(function (child) {
-              if (child === resizer) return;
-              if (!child.dataset.scrollFixed) {
+              if (child !== resizer && !child.dataset.scrollFixed) {
                 child.style.overflowY = 'auto';
                 child.style.height = '100%';
                 child.dataset.scrollFixed = '1';
+                panes.push(child);
               }
             });
           });
+          return panes;
+        }
+
+        function getPaneAtPoint(x, y) {
+          var resizers = document.querySelectorAll('[class*="Resizer"]');
+          for (var i = 0; i < resizers.length; i++) {
+            var resizer = resizers[i];
+            var splitPane = resizer.parentElement;
+            if (!splitPane) continue;
+            var children = Array.from(splitPane.children);
+            for (var j = 0; j < children.length; j++) {
+              var child = children[j];
+              if (child === resizer) continue;
+              var rect = child.getBoundingClientRect();
+              if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+                return child;
+              }
+            }
+          }
+          return null;
         }
 
         if (window.MutationObserver) {
-          var observer = new MutationObserver(fixSplitPaneScroll);
+          var observer = new MutationObserver(findPanes);
           observer.observe(document.body, { childList: true, subtree: true });
         }
-        setInterval(fixSplitPaneScroll, 800);
-        fixSplitPaneScroll();
+        setInterval(findPanes, 800);
+        findPanes();
 
-        // 滚轮委托：在当前 SplitPane 的 pane 上滚动
         document.addEventListener(
           'wheel',
           function (e) {
-            var pane = e.target.closest && e.target.closest('[class*="SplitPane"] > div:not([class*="Resizer"])');
-
-            // 如果鼠标点在 Resizer 上，找到相邻 pane
-            if (!pane) {
-              var resizer = e.target.closest && e.target.closest('[class*="Resizer"]');
-              if (resizer) {
-                var splitPane = resizer.parentElement;
-                if (splitPane) {
-                  var children = Array.from(splitPane.children).filter(function (c) { return c !== resizer; });
-                  pane = children[0];
-                }
-              }
-            }
-
+            var pane = getPaneAtPoint(e.clientX, e.clientY);
             if (!pane) return;
-            if (pane.scrollHeight <= pane.clientHeight) return;
+
+            // 如果 pane 内部还有可滚动子元素且未到底，让默认行为继续
+            var style = window.getComputedStyle(pane);
+            var scrollable = (style.overflowY === 'auto' || style.overflowY === 'scroll') &&
+                             pane.scrollHeight > pane.clientHeight;
+            if (!scrollable) return;
 
             var maxScroll = pane.scrollHeight - pane.clientHeight;
             var newTop = pane.scrollTop + e.deltaY;
