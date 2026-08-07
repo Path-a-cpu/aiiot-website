@@ -52,7 +52,7 @@ export default {
       }
     }
 
-    return new Response('DAQ-IOT OAuth proxy', { status: 200 });
+    return new Response('aiiot OAuth proxy', { status: 200 });
   },
 };
 

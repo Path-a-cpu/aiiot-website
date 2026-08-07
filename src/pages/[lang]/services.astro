@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getTranslations } from '../../i18n/utils';
+import { getTranslations, getSiteData } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
 
 export function getStaticPaths() {
@@ -8,16 +8,16 @@ export function getStaticPaths() {
 }
 const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
+const site = await getSiteData(lang);
 const base = '/' + lang;
 
-const items = [
-  { n: '01', title: t('nav.products'), desc: t('products.subtitle') },
-  { n: '02', title: t('nav.solutions'), desc: t('solutions.subtitle') },
-  { n: '03', title: t('nav.support'), desc: t('support.subtitle') },
-  { n: '04', title: t('nav.partners'), desc: t('partners.subtitle') },
-];
+const items = (site.services?.items ?? []).map((it: { title: string; desc: string }, i: number) => ({
+  n: String(i + 1).padStart(2, '0'),
+  title: it.title,
+  desc: it.desc
+}));
 ---
-<BaseLayout lang={lang} title={t('services.title') + ' | DAQ-IOT'} description={t('services.subtitle')}>
+<BaseLayout lang={lang} title={t('services.title') + ' | aiiot'} description={t('services.subtitle')}>
   <section class="bg-brand-dark">
     <div class="mx-auto max-w-7xl px-4 py-16">
       <h1 class="text-3xl md:text-4xl font-bold text-white">{t('services.title')}</h1>

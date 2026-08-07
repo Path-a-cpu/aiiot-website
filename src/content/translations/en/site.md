@@ -18,13 +18,13 @@ cat:
   auto: AI+ Automation
 hero:
   title: Industrial IoT AIIOT Solutions Expert
-  subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.
+  subtitle: aiiot delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.
   ctaPrimary: Get a Quote
   ctaSecondary: View Products
 home:
   eyebrow: AIIOT | Connecting the Universe of Intelligence
   heroTitle: Giving Every Device Perception and Intelligence
-  heroSubtitle: From wireless sensors and edge gateways to SCADA and energy-management platforms, DAQ-IOT provides an end-to-cloud industrial IoT stack for smart manufacturing and new energy.
+  heroSubtitle: From wireless sensors and edge gateways to SCADA and energy-management platforms, aiiot provides an end-to-cloud industrial IoT stack for smart manufacturing and new energy.
   heroCta1: Get a Quote
   heroCta2: View Products
   categoriesTitle: AI+ Five Product Families
@@ -42,7 +42,7 @@ home:
     - label: PV & New Energy
     - label: Smart City
     - label: Power & Energy
-  statsTitle: DAQ-IOT · The Data Foundation
+  statsTitle: aiiot · The Data Foundation
   stats:
     - value: National
       label: High-Tech Enterprise
@@ -58,7 +58,7 @@ home:
   ctaSubtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
   ctaButton: Contact Us Now
 features:
-  title: Why DAQ-IOT
+  title: Why aiiot
   subtitle: National high-tech enterprise focused on industrial IoT and digital transformation
   feature1Title: National High-Tech Enterprise
   feature1Desc: Certified national high-tech company with R&D strength in industrial IoT.
@@ -77,10 +77,10 @@ cta:
   subtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
   button: Contact Us Now
 about:
-  title: About DAQ-IOT
-  p1: Shanghai DAQ-IOT Technology Co., Ltd. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.
+  title: About aiiot
+  p1: Shanghai aiiot Technology Co., Ltd. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.
   p2: Our solutions serve smart manufacturing, PV new energy and other industries. With service locations in Shanghai, Henan, Zhengzhou and Bangladesh, we support global clients with reliable products and local service.
-  p3: Contact us at business@daq-iot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.
+  p3: Contact us at business@x-aiiot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.
 products:
   title: Products & Solutions
   subtitle: Industrial IoT hardware and software for data acquisition, monitoring and management
@@ -117,17 +117,49 @@ solutions:
 services:
   title: Services & Support
   subtitle: From consulting and deployment to training and O&M — we accompany your digital transformation
+  items:
+    - title: Consulting
+      desc: Selection and architecture advice based on on-site needs, delivering actionable IoT plans.
+    - title: Deployment
+      desc: One-stop delivery of sensor installation, gateway configuration and platform integration.
+    - title: Training
+      desc: Product usage and maintenance training for engineers and managers.
+    - title: Custom Development
+      desc: Tailored data acquisition, monitoring and dashboard features per industry scenario.
 partners:
   title: Partners
   subtitle: Building the industrial IoT ecosystem with channel partners, integrators and customers
+  items:
+    - title: Channel Partners
+      desc: Regional agents and distributors sharing market and channel resources.
+    - title: System Integrators
+      desc: Project collaboration with automation and IT system integrators.
+    - title: Industry Customers
+      desc: Direct cooperation with customers in manufacturing, energy, water and other sectors.
+  resourcesTitle: Resource Center
+  resourcesSubtitle: Product brochures, certificates and whitepapers for partners to download.
+  resources:
+    - title: Product Brochures
+      desc: High-resolution brochures and spec overviews for each product family.
+    - title: Certificates
+      desc: High-tech enterprise, CE/ROHS and other qualification documents.
+    - title: Whitepapers
+      desc: Industry solution and technical architecture whitepapers.
 support:
   title: Technical Support
   subtitle: Documentation, RMA and training resources to keep your systems running
+  items:
+    - title: Documentation
+      desc: Product manuals, wiring diagrams, configuration guides and API docs.
+    - title: RMA Service
+      desc: After-sales repair and warranty process with fast response for faulty devices.
+    - title: Training Resources
+      desc: Online videos and on-site training to boost O&M capability.
 footer:
   contact: Contact
   products: Products
   solutions: Solutions
   company: Company
-  rights: Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.
+  rights: Copyright © 2021-2025 aiiot Technology. All Rights Reserved.
   tagline: Making Data Collection Simpler.
 ---

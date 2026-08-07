@@ -18,13 +18,13 @@ cat:
   auto: KI+ Automatisierung
 hero:
   title: Experte für industrielle IoT-AIIOT-Lösungen
-  subtitle: DAQ-IOT bietet KI+ Software, Edge-Computing, drahtlose Sensorik, intelligente Konnektivität und Automatisierung für den Daten-Intelligenz-Kreislauf vom Gerät in die Cloud.
+  subtitle: aiiot bietet KI+ Software, Edge-Computing, drahtlose Sensorik, intelligente Konnektivität und Automatisierung für den Daten-Intelligenz-Kreislauf vom Gerät in die Cloud.
   ctaPrimary: Angebot anfordern
   ctaSecondary: Produkte ansehen
 home:
   eyebrow: AIIOT | Connecting the Universe of Intelligence
   heroTitle: Jedem Gerät Wahrnehmung und Intelligenz geben
-  heroSubtitle: Von drahtlosen Sensoren und Edge-Gateways bis zu SCADA- und Energiemanagement-Plattformen liefert DAQ-IOT einen durchgängigen Industrial-IoT-Stack für smarte Fertigung und erneuerbare Energien.
+  heroSubtitle: Von drahtlosen Sensoren und Edge-Gateways bis zu SCADA- und Energiemanagement-Plattformen liefert aiiot einen durchgängigen Industrial-IoT-Stack für smarte Fertigung und erneuerbare Energien.
   heroCta1: Angebot anfordern
   heroCta2: Produkte ansehen
   categoriesTitle: KI+ Fünf Produktfamilien
@@ -42,7 +42,7 @@ home:
     - label: PV & Neue Energien
     - label: Smart City
     - label: Energie & Strom
-  statsTitle: DAQ-IOT · Das Daten-Fundament
+  statsTitle: aiiot · Das Daten-Fundament
   stats:
     - value: Staatlich
       label: High-Tech-Unternehmen
@@ -58,7 +58,7 @@ home:
   ctaSubtitle: Senden Sie Ihre Anforderungen und erhalten Sie innerhalb von 24 Stunden ein maßgeschneidertes IoT-Angebot.
   ctaButton: Jetzt kontaktieren
 features:
-  title: Warum DAQ-IOT
+  title: Warum aiiot
   subtitle: National High-Tech-Unternehmen, spezialisiert auf industrielles IoT und digitale Transformation
   feature1Title: National High-Tech-Unternehmen
   feature1Desc: Zertifiziertes High-Tech-Unternehmen mit F&E-Kompetenz im industriellen IoT.
@@ -77,10 +77,10 @@ cta:
   subtitle: Senden Sie Ihre Anforderungen und erhalten Sie innerhalb von 24 Stunden ein maßgeschneidertes IoT-Angebot.
   button: Jetzt kontaktieren
 about:
-  title: Über DAQ-IOT
-  p1: Die Shanghai DAQ-IOT Technology Co., Ltd. ist ein nationales High-Tech-Unternehmen, das auf industrielles IoT und digitale Unternehmenstransformation spezialisiert ist. Wir bieten kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme, Energiemanagementplattformen und mehr.
+  title: Über aiiot
+  p1: Die Shanghai aiiot Technology Co., Ltd. ist ein nationales High-Tech-Unternehmen, das auf industrielles IoT und digitale Unternehmenstransformation spezialisiert ist. Wir bieten kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme, Energiemanagementplattformen und mehr.
   p2: Unsere Lösungen dienen der intelligenten Fertigung, der PV-Neuenergie und weiteren Branchen. Mit Standorten in Shanghai, Henan, Zhengzhou und Bangladesch unterstützen wir globale Kunden mit zuverlässigen Produkten und lokalem Service.
-  p3: Kontaktieren Sie uns unter business@daq-iot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.
+  p3: Kontaktieren Sie uns unter business@x-aiiot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.
 products:
   title: Produkte & Lösungen
   subtitle: Industrielle IoT-Hardware und -Software für Datenerfassung, Überwachung und Management
@@ -117,17 +117,49 @@ solutions:
 services:
   title: Service & Support
   subtitle: Von Beratung und Implementierung bis zu Schulung und Betrieb – wir begleiten Ihre digitale Transformation
+  items:
+    - title: Beratung
+      desc: Auswahl- und Architekturempfehlungen basierend auf Bedarf vor Ort, mit umsetzbaren IoT-Plänen.
+    - title: Implementierung
+      desc: Sensorinstallation, Gateway-Konfiguration und Plattformintegration aus einer Hand.
+    - title: Schulung
+      desc: Produktschulungen für Ingenieure und Manager zu Bedienung und Wartung.
+    - title: Individuelle Entwicklung
+      desc: Maßgeschneiderte Datenerfassungs-, Überwachungs- und Dashboard-Funktionen je Branche.
 partners:
   title: Partner
   subtitle: Aufbau des Industrial-IoT-Ökosystems mit Channel-Partnern, Integratoren und Kunden
+  items:
+    - title: Channel-Partner
+      desc: Regionale Vertriebspartner und Distributoren mit gemeinsamen Markt- und Kanalressourcen.
+    - title: Systemintegratoren
+      desc: Projektzusammenarbeit mit Automatisierungs- und IT-Systemintegratoren.
+    - title: Industriekunden
+      desc: Direkte Zusammenarbeit mit Kunden aus Fertigung, Energie, Wasser u. a.
+  resourcesTitle: Ressourcen-Center
+  resourcesSubtitle: Produktbroschüren, Zertifikate und Whitepaper zum Download für Partner.
+  resources:
+    - title: Produktbroschüren
+      desc: Hochauflösende Broschüren und Spezifikationsüberblicke je Produktfamilie.
+    - title: Zertifikate
+      desc: High-Tech-Unternehmen, CE/ROHS und weitere Qualifikationsunterlagen.
+    - title: Whitepaper
+      desc: Whitepaper zu Branchenlösungen und Technikarchitektur.
 support:
   title: Technischer Support
   subtitle: Dokumentation, RMA und Schulungsressourcen für den stabilen Betrieb Ihrer Systeme
+  items:
+    - title: Dokumentation
+      desc: Produkthandbücher, Schaltpläne, Konfigurationsleitfäden und API-Dokumentation.
+    - title: RMA-Service
+      desc: After-Sales-Reparatur und Garantieprozess mit schneller Reaktion auf defekte Geräte.
+    - title: Schulungsressourcen
+      desc: Online-Videos und Vor-Ort-Schulungen zur Stärkung der O&M-Kompetenz.
 footer:
   contact: Kontakt
   products: Produkte
   solutions: Lösungen
   company: Unternehmen
-  rights: Copyright © 2021-2025 DAQ-IOT Technology. Alle Rechte vorbehalten.
+  rights: Copyright © 2021-2025 aiiot Technology. Alle Rechte vorbehalten.
   tagline: Datenerfassung einfacher machen.
 ---

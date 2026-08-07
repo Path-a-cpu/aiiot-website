@@ -12,11 +12,11 @@ export const ui = {
 
     'hero.title': 'Industrial IoT Solutions Expert',
     'hero.subtitle':
-      'DAQ-IOT delivers wireless sensors, data acquisition & monitoring systems, SCADA systems, and energy management platforms for smart manufacturing and new energy.',
+      'aiiot delivers wireless sensors, data acquisition & monitoring systems, SCADA systems, and energy management platforms for smart manufacturing and new energy.',
     'hero.ctaPrimary': 'Get a Quote',
     'hero.ctaSecondary': 'View Products',
 
-    'features.title': 'Why DAQ-IOT',
+    'features.title': 'Why aiiot',
     'features.subtitle': 'National high-tech enterprise focused on industrial IoT and digital transformation',
     'feature1Title': 'National High-Tech Enterprise',
     'feature1Desc': 'Certified national high-tech company with R&D strength in industrial IoT.',
@@ -35,13 +35,13 @@ export const ui = {
     'cta.subtitle': 'Send your requirements and get a tailored IoT solution quote within 24 hours.',
     'cta.button': 'Contact Us Now',
 
-    'about.title': 'About DAQ-IOT',
+    'about.title': 'About aiiot',
     'about.p1':
-      'Shanghai DAQ-IOT Technology Co., Ltd. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.',
+      'Shanghai aiiot Technology Co., Ltd. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.',
     'about.p2':
       'Our solutions serve smart manufacturing, PV new energy and other industries. With service locations in Shanghai, Henan, Zhengzhou and Bangladesh, we support global clients with reliable products and local service.',
     'about.p3':
-      'Contact us at business@daq-iot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.',
+      'Contact us at business@x-aiiot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.',
 
     'products.title': 'Products & Solutions',
     'products.subtitle': 'Industrial IoT hardware and software for data acquisition, monitoring and management',
@@ -73,7 +73,7 @@ export const ui = {
     'contact.address': 'Address',
 
     'footer.contact': 'Contact',
-    'footer.rights': 'Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.',
+    'footer.rights': 'Copyright © 2021-2025 aiiot Technology. All Rights Reserved.',
     'footer.tagline': 'Making Data Collection Simpler.',
   },
 
@@ -86,7 +86,7 @@ export const ui = {
 
     'hero.title': '工业物联网解决方案专家',
     'hero.subtitle':
-      'DAQ-IOT 数采物联提供无线传感器、数据采集监控系统、SCADA系统、能源管理平台等解决方案，服务智能制造与光伏新能源。',
+      'aiiot 数采物联提供无线传感器、数据采集监控系统、SCADA系统、能源管理平台等解决方案，服务智能制造与光伏新能源。',
     'hero.ctaPrimary': '获取报价',
     'hero.ctaSecondary': '查看产品',
 
@@ -115,7 +115,7 @@ export const ui = {
     'about.p2':
       '公司服务智能制造、光伏新能源等领域，在上海、河南、郑州及孟加拉设有服务网点，为全球客户提供可靠产品与本地化服务。',
     'about.p3':
-      '欢迎通过 business@daq-iot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。',
+      '欢迎通过 business@x-aiiot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。',
 
     'products.title': '产品与解决方案',
     'products.subtitle': '面向数据采集、监控与管理的工业物联网软硬件产品',
@@ -147,7 +147,7 @@ export const ui = {
     'contact.address': '地址',
 
     'footer.contact': '联系方式',
-    'footer.rights': 'Copyright © 2021-2025 DAQ-IOT Technology 版权所有。',
+    'footer.rights': 'Copyright © 2021-2025 aiiot Technology 版权所有。',
     'footer.tagline': '让数据采集更简单。',
   },
 
@@ -160,11 +160,11 @@ export const ui = {
 
     'hero.title': 'Experte für industrielle IoT-Lösungen',
     'hero.subtitle':
-      'DAQ-IOT bietet kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme und Energiemanagementplattformen für intelligente Fertigung und erneuerbare Energien.',
+      'aiiot bietet kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme und Energiemanagementplattformen für intelligente Fertigung und erneuerbare Energien.',
     'hero.ctaPrimary': 'Angebot anfordern',
     'hero.ctaSecondary': 'Produkte ansehen',
 
-    'features.title': 'Warum DAQ-IOT',
+    'features.title': 'Warum aiiot',
     'features.subtitle': 'National High-Tech-Unternehmen, spezialisiert auf industrielles IoT und digitale Transformation',
     'feature1Title': 'National High-Tech-Unternehmen',
     'feature1Desc': 'Zertifiziertes High-Tech-Unternehmen mit F&E-Kompetenz im industriellen IoT.',
@@ -183,13 +183,13 @@ export const ui = {
     'cta.subtitle': 'Senden Sie Ihre Anforderungen und erhalten Sie innerhalb von 24 Stunden ein maßgeschneidertes IoT-Angebot.',
     'cta.button': 'Jetzt kontaktieren',
 
-    'about.title': 'Über DAQ-IOT',
+    'about.title': 'Über aiiot',
     'about.p1':
-      'Die Shanghai DAQ-IOT Technology Co., Ltd. ist ein nationales High-Tech-Unternehmen, das auf industrielles IoT und digitale Unternehmenstransformation spezialisiert ist. Wir bieten kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme, Energiemanagementplattformen und mehr.',
+      'Die Shanghai aiiot Technology Co., Ltd. ist ein nationales High-Tech-Unternehmen, das auf industrielles IoT und digitale Unternehmenstransformation spezialisiert ist. Wir bieten kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme, Energiemanagementplattformen und mehr.',
     'about.p2':
       'Unsere Lösungen dienen der intelligenten Fertigung, der PV-Neuenergie und weiteren Branchen. Mit Standorten in Shanghai, Henan, Zhengzhou und Bangladesch unterstützen wir globale Kunden mit zuverlässigen Produkten und lokalem Service.',
     'about.p3':
-      'Kontaktieren Sie uns unter business@daq-iot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.',
+      'Kontaktieren Sie uns unter business@x-aiiot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.',
 
     'products.title': 'Produkte & Lösungen',
     'products.subtitle': 'Industrielle IoT-Hardware und -Software für Datenerfassung, Überwachung und Management',
@@ -221,7 +221,7 @@ export const ui = {
     'contact.address': 'Adresse',
 
     'footer.contact': 'Kontakt',
-    'footer.rights': 'Copyright © 2021-2025 DAQ-IOT Technology. Alle Rechte vorbehalten.',
+    'footer.rights': 'Copyright © 2021-2025 aiiot Technology. Alle Rechte vorbehalten.',
     'footer.tagline': 'Datenerfassung einfacher machen.',
   },
 } as const;

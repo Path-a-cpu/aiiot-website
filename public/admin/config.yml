@@ -177,18 +177,48 @@ collections:
         fields:
           - { name: title, label: 标题, widget: string, i18n: true }
           - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - label: 服务列表(可增删)
+            name: items
+            widget: list
+            i18n: true
+            fields:
+              - { name: title, label: 服务标题, widget: string, i18n: true }
+              - { name: desc, label: 服务描述, widget: text, i18n: true }
       - label: 合作伙伴页
         name: partners
         widget: object
         fields:
           - { name: title, label: 标题, widget: string, i18n: true }
           - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - label: 合作伙伴类型(可增删)
+            name: items
+            widget: list
+            i18n: true
+            fields:
+              - { name: title, label: 类型标题, widget: string, i18n: true }
+              - { name: desc, label: 类型描述, widget: text, i18n: true }
+          - { name: resourcesTitle, label: 资料区标题, widget: string, i18n: true }
+          - { name: resourcesSubtitle, label: 资料区副标题, widget: text, i18n: true }
+          - label: 资料列表(可增删)
+            name: resources
+            widget: list
+            i18n: true
+            fields:
+              - { name: title, label: 资料标题, widget: string, i18n: true }
+              - { name: desc, label: 资料描述, widget: text, i18n: true }
       - label: 技术支持页
         name: support
         widget: object
         fields:
           - { name: title, label: 标题, widget: string, i18n: true }
           - { name: subtitle, label: 副标题, widget: text, i18n: true }
+          - label: 支持列表(可增删)
+            name: items
+            widget: list
+            i18n: true
+            fields:
+              - { name: title, label: 支持标题, widget: string, i18n: true }
+              - { name: desc, label: 支持描述, widget: text, i18n: true }
       - label: 页脚
         name: footer
         widget: object

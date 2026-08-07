@@ -18,13 +18,13 @@ cat:
   auto: AI+自动化
 hero:
   title: 工业物联网 AIIOT 解决方案专家
-  subtitle: DAQ-IOT 数采物联以 AI+ 软件、边缘计算、无线传感、智能连接与自动化，构建设备到云端的数据智能闭环。
+  subtitle: aiiot 数采物联以 AI+ 软件、边缘计算、无线传感、智能连接与自动化，构建设备到云端的数据智能闭环。
   ctaPrimary: 获取报价
   ctaSecondary: 查看产品
 home:
   eyebrow: AIIOT | Connecting the Universe of Intelligence
   heroTitle: 让每一台设备都拥有感知与智慧
-  heroSubtitle: 从无线传感器、边缘计算网关到 SCADA 与能源管理平台，DAQ-IOT 为智能制造与新能源提供端到云的工业物联网全栈方案。
+  heroSubtitle: 从无线传感器、边缘计算网关到 SCADA 与能源管理平台，aiiot 为智能制造与新能源提供端到云的工业物联网全栈方案。
   heroCta1: 获取报价
   heroCta2: 查看产品
   categoriesTitle: AI+ 五大产品矩阵
@@ -80,7 +80,7 @@ about:
   title: 关于数采物联
   p1: 上海数采物联网科技有限公司是国家级高新技术企业，专注于工业物联网和企业数字化转型，提供无线传感器、数据采集监控系统、SCADA系统、能源管理平台等解决方案。
   p2: 公司服务智能制造、光伏新能源等领域，在上海、河南、郑州及孟加拉设有服务网点，为全球客户提供可靠产品与本地化服务。
-  p3: 欢迎通过 business@daq-iot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。
+  p3: 欢迎通过 business@x-aiiot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。
 products:
   title: 产品与解决方案
   subtitle: 面向数据采集、监控与管理的工业物联网软硬件产品
@@ -117,17 +117,49 @@ solutions:
 services:
   title: 服务与支持
   subtitle: 从方案咨询、部署实施到运维培训，全程陪伴您的数字化转型
+  items:
+    - title: 方案咨询
+      desc: 基于现场需求提供选型与架构建议，输出可落地的物联网方案。
+    - title: 部署实施
+      desc: 传感器安装、网关配置、平台对接一站式交付。
+    - title: 运维培训
+      desc: 面向工程师与管理人员的产品使用与维护培训。
+    - title: 定制开发
+      desc: 按行业场景定制数据采集、监控与看板功能。
 partners:
   title: 合作伙伴
   subtitle: 与渠道伙伴、集成商及行业客户共建工业物联网生态
+  items:
+    - title: 渠道伙伴
+      desc: 区域代理与经销商，共享市场与渠道资源。
+    - title: 系统集成商
+      desc: 面向自动化与信息化集成商的项目协作。
+    - title: 行业客户
+      desc: 制造、能源、水务等行业的直接合作客户。
+  resourcesTitle: 资料中心
+  resourcesSubtitle: 产品彩页、认证证书与白皮书，供合作伙伴下载使用
+  resources:
+    - title: 产品彩页
+      desc: 各产品系列高清彩页与规格速览。
+    - title: 认证证书
+      desc: 高新技术企业、CE/ROHS 等资质文件。
+    - title: 白皮书
+      desc: 行业解决方案与技术架构白皮书。
 support:
   title: 技术支持
   subtitle: 提供文档、RMA 与培训资源，保障系统稳定运行
+  items:
+    - title: 文档中心
+      desc: 产品手册、接线图、配置指南与 API 文档。
+    - title: RMA 服务
+      desc: 售后返修与质保流程，快速响应故障设备。
+    - title: 培训资源
+      desc: 在线视频与现场培训，提升运维能力。
 footer:
   contact: 联系方式
   products: 产品
   solutions: 解决方案
   company: 公司
-  rights: Copyright © 2021-2025 DAQ-IOT Technology 版权所有。
+  rights: Copyright © 2021-2025 aiiot Technology 版权所有。
   tagline: 让数据采集更简单。
 ---
