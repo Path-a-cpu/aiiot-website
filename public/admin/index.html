@@ -4,8 +4,69 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aiiot 内容管理后台</title>
+    <style>
+      /* Decap CMS 多语言分栏滚动修复 */
+      html, body, #nc-root {
+        height: 100%;
+        overflow: hidden;
+      }
+      .SplitPane {
+        height: 100vh !important;
+      }
+      .Pane,
+      .Pane1,
+      .Pane2 {
+        overflow-y: auto !important;
+        height: 100% !important;
+      }
+      .Resizer {
+        z-index: 10;
+        background: #e2e8f0;
+      }
+    </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // 兼容 Decap CMS 分栏滚动：Pane 生成后强制启用纵向滚动，
+      // 并在滚轮时把事件委托给对应的 Pane，避免只能拖中间分隔条。
+      (function () {
+        function enablePaneScroll() {
+          document.querySelectorAll('.Pane, .Pane1, .Pane2').forEach(function (pane) {
+            if (!pane.dataset.scrollFixed) {
+              pane.style.overflowY = 'auto';
+              pane.dataset.scrollFixed = '1';
+            }
+          });
+        }
+
+        if (window.MutationObserver) {
+          var observer = new MutationObserver(enablePaneScroll);
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+        setInterval(enablePaneScroll, 1000);
+        enablePaneScroll();
+
+        document.addEventListener(
+          'wheel',
+          function (e) {
+            var pane = e.target.closest && e.target.closest('.Pane, .Pane1, .Pane2');
+            if (!pane) return;
+            if (pane.scrollHeight <= pane.clientHeight) return;
+
+            var maxScroll = pane.scrollHeight - pane.clientHeight;
+            var newTop = pane.scrollTop + e.deltaY;
+            if (newTop < 0) newTop = 0;
+            if (newTop > maxScroll) newTop = maxScroll;
+
+            if (newTop !== pane.scrollTop) {
+              pane.scrollTop = newTop;
+              e.preventDefault();
+            }
+          },
+          { passive: false }
+        );
+      })();
+    </script>
   </body>
 </html>
