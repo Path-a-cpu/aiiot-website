@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Path-a-cpu/aiiot-website
   branch: main
-  base_url: https://daq-iot-website.pages.dev
+  base_url: https://x-aiiot.com
   auth_endpoint: /oauth/auth
 
 locale: zh_Hans
