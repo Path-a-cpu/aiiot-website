@@ -54,7 +54,7 @@ const cats = [
         <a href={'/' + lang + '/products/' + p.id.split('/').slice(1).join('/')}
            data-category={p.data.category}
            class="product-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
-          {p.data.image && <img src={p.data.image} alt={p.data.title} class="w-full h-48 object-cover" />}
+          {p.data.image && <img src={p.data.image} alt={p.data.title} class="w-full h-48 object-contain bg-slate-50" />}
           <div class="p-6">
             <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">{t('cat.' + p.data.category)}</span>
             <h3 class="text-xl font-semibold text-brand-dark">{p.data.title}</h3>
