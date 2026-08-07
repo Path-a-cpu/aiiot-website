@@ -5,97 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aiiot 内容管理后台</title>
     <style>
-      /* Decap CMS 多语言分栏滚动修复 */
+      /* 让 Decap 应用自身管理滚动，避免整页乱滚 */
       html, body, #nc-root {
         height: 100%;
         overflow: hidden;
       }
-      [class*="SplitPane"] {
-        height: 100vh !important;
-      }
-      /* SplitPane 下所有直接子 div（面板）都可滚动，Resizer 除外 */
-      [class*="SplitPane"] > div {
+      /* Decap i18n 双栏编辑器（产品/博客）真实语言栏类名为 .Pane
+         其默认只有 height:100% 没有 overflow，导致内容超出后滚轮划不动。
+         加上 overflow-y:auto 让每个语言栏独立滚动。 */
+      .Pane {
         overflow-y: auto !important;
         height: 100% !important;
+        max-height: 100% !important;
       }
-      [class*="SplitPane"] > [class*="Resizer"] {
-        overflow: visible !important;
-        width: 8px !important;
-        background: #e2e8f0 !important;
+      /* split-pane 容器撑满高度（react-split-pane 类名为小写） */
+      [class*="split-pane"],
+      [class*="SplitPane"] {
+        height: 100% !important;
       }
     </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
+      // 兜底：确保任何 .Pane 语言栏都获得可滚动高度（防止个别版本 CSS 覆盖失效）
       (function () {
-        function findPanes() {
-          var panes = [];
-          document.querySelectorAll('[class*="Resizer"]').forEach(function (resizer) {
-            var splitPane = resizer.parentElement;
-            if (!splitPane) return;
-            Array.from(splitPane.children).forEach(function (child) {
-              if (child !== resizer && !child.dataset.scrollFixed) {
-                child.style.overflowY = 'auto';
-                child.style.height = '100%';
-                child.dataset.scrollFixed = '1';
-                panes.push(child);
-              }
-            });
+        function fixPanes() {
+          document.querySelectorAll('.Pane').forEach(function (p) {
+            if (p.dataset.scrollFixed) return;
+            p.style.overflowY = 'auto';
+            p.style.height = '100%';
+            p.style.maxHeight = '100%';
+            p.dataset.scrollFixed = '1';
           });
-          return panes;
         }
-
-        function getPaneAtPoint(x, y) {
-          var resizers = document.querySelectorAll('[class*="Resizer"]');
-          for (var i = 0; i < resizers.length; i++) {
-            var resizer = resizers[i];
-            var splitPane = resizer.parentElement;
-            if (!splitPane) continue;
-            var children = Array.from(splitPane.children);
-            for (var j = 0; j < children.length; j++) {
-              var child = children[j];
-              if (child === resizer) continue;
-              var rect = child.getBoundingClientRect();
-              if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
-                return child;
-              }
-            }
-          }
-          return null;
-        }
-
         if (window.MutationObserver) {
-          var observer = new MutationObserver(findPanes);
-          observer.observe(document.body, { childList: true, subtree: true });
+          new MutationObserver(fixPanes).observe(document.body, { childList: true, subtree: true });
         }
-        setInterval(findPanes, 800);
-        findPanes();
-
-        document.addEventListener(
-          'wheel',
-          function (e) {
-            var pane = getPaneAtPoint(e.clientX, e.clientY);
-            if (!pane) return;
-
-            // 如果 pane 内部还有可滚动子元素且未到底，让默认行为继续
-            var style = window.getComputedStyle(pane);
-            var scrollable = (style.overflowY === 'auto' || style.overflowY === 'scroll') &&
-                             pane.scrollHeight > pane.clientHeight;
-            if (!scrollable) return;
-
-            var maxScroll = pane.scrollHeight - pane.clientHeight;
-            var newTop = pane.scrollTop + e.deltaY;
-            if (newTop < 0) newTop = 0;
-            if (newTop > maxScroll) newTop = maxScroll;
-
-            if (newTop !== pane.scrollTop) {
-              pane.scrollTop = newTop;
-              e.preventDefault();
-            }
-          },
-          { passive: false }
-        );
+        setInterval(fixPanes, 1000);
+        fixPanes();
       })();
     </script>
   </body>
