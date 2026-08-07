@@ -2,7 +2,7 @@
 category: sensor
 title: Kabellose Sensoren
 summary: Temperatur-, Feuchtigkeits-, Druck- und Vibrationssensoren für rauhe Industrieumgebungen.
-image: /product-1.svg
+image: /images/wireless-sensors.jpg
 order: 1
 ---
 

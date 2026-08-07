@@ -2,7 +2,7 @@
 category: sensor
 title: 无线传感器
 summary: 温湿度、压力、振动等工业级无线传感器，适配复杂现场环境。
-image: /product-1.svg
+image: /images/wireless-sensors.jpg
 order: 1
 ---
 

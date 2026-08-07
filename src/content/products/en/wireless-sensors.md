@@ -2,7 +2,7 @@
 category: sensor
 title: Wireless Sensors
 summary: Temperature, humidity, pressure, vibration and other industrial wireless sensors for harsh environments.
-image: /product-1.svg
+image: /images/wireless-sensors.jpg
 order: 1
 ---
 
