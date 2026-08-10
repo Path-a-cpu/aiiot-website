@@ -5,58 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aiiot 内容管理后台</title>
     <style>
-      /* 让 Decap 应用自身管理滚动，避免整页乱滚 */
-      html, body, #nc-root {
-        height: 100%;
-        overflow: hidden;
-      }
-      /* Decap i18n 双栏编辑器（产品/博客）真实语言栏类名为 .Pane
-         其默认只有 height:100% 没有 overflow，导致内容超出后滚轮划不动。
-         加上 overflow-y:auto 让每个语言栏独立滚动，同时给内部嵌套容器兜底。 */
+      html, body, #nc-root { height: 100%; }
+      #nc-root { overflow: hidden; }
+      /* Decap i18n 双栏真实类名为 .Pane（默认只有 height:100% 没有 overflow）。
+         只给它和直接内容容器加 overflow-y:auto + 正确高度，
+         让浏览器原生滚轮自己找最近的可滚容器，绝不接管 wheel 事件。 */
       .Pane,
-      .Pane > div,
-      .Pane > div > div {
+      .Pane > div {
         overflow-y: auto !important;
         height: 100% !important;
         max-height: 100% !important;
       }
-      /* split-pane 容器撑满高度（react-split-pane 类名为小写） */
       [class*="split-pane"],
-      [class*="SplitPane"] {
-        height: 100% !important;
-      }
+      [class*="SplitPane"] { height: 100% !important; }
     </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      // 兜底：确保任何 .Pane 语言栏都获得可滚动高度，并直接接管滚轮事件
+      // 仅兜底：确保动态生成的 .Pane 拿到 overflow-y:auto，不接管滚轮
       (function () {
         function fixPanes() {
           document.querySelectorAll('.Pane').forEach(function (p) {
             if (p.dataset.scrollFixed) return;
             p.style.overflowY = 'auto';
-            p.style.height = '100%';
-            p.style.maxHeight = '100%';
             p.dataset.scrollFixed = '1';
+            var child = p.firstElementChild;
+            if (child) {
+              child.style.overflowY = 'auto';
+              child.style.height = '100%';
+            }
           });
         }
-        // 滚轮事件被 Decap 内部元素吞掉时，手动滚动所在的 .Pane
-        window.addEventListener(
-          'wheel',
-          function (e) {
-            var el = e.target;
-            while (el && el !== document.body) {
-              if (el.classList && el.classList.contains('Pane')) {
-                e.preventDefault();
-                el.scrollTop += e.deltaY;
-                return;
-              }
-              el = el.parentElement;
-            }
-          },
-          { passive: false }
-        );
         if (window.MutationObserver) {
           new MutationObserver(fixPanes).observe(document.body, { childList: true, subtree: true });
         }
