@@ -12,8 +12,10 @@
       }
       /* Decap i18n 双栏编辑器（产品/博客）真实语言栏类名为 .Pane
          其默认只有 height:100% 没有 overflow，导致内容超出后滚轮划不动。
-         加上 overflow-y:auto 让每个语言栏独立滚动。 */
-      .Pane {
+         加上 overflow-y:auto 让每个语言栏独立滚动，同时给内部嵌套容器兜底。 */
+      .Pane,
+      .Pane > div,
+      .Pane > div > div {
         overflow-y: auto !important;
         height: 100% !important;
         max-height: 100% !important;
@@ -28,7 +30,7 @@
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      // 兜底：确保任何 .Pane 语言栏都获得可滚动高度（防止个别版本 CSS 覆盖失效）
+      // 兜底：确保任何 .Pane 语言栏都获得可滚动高度，并直接接管滚轮事件
       (function () {
         function fixPanes() {
           document.querySelectorAll('.Pane').forEach(function (p) {
@@ -39,6 +41,22 @@
             p.dataset.scrollFixed = '1';
           });
         }
+        // 滚轮事件被 Decap 内部元素吞掉时，手动滚动所在的 .Pane
+        window.addEventListener(
+          'wheel',
+          function (e) {
+            var el = e.target;
+            while (el && el !== document.body) {
+              if (el.classList && el.classList.contains('Pane')) {
+                e.preventDefault();
+                el.scrollTop += e.deltaY;
+                return;
+              }
+              el = el.parentElement;
+            }
+          },
+          { passive: false }
+        );
         if (window.MutationObserver) {
           new MutationObserver(fixPanes).observe(document.body, { childList: true, subtree: true });
         }
