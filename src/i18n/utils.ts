@@ -26,8 +26,11 @@ export async function getSiteData(lang: Lang): Promise<Record<string, any>> {
 }
 
 async function loadCollectionData(lang: Lang, collection: string): Promise<Record<string, any>> {
-  const entries = await getCollection(collection as any, (entry) => entry.id.startsWith(lang + '-'));
-  return (entries[0]?.data ?? {}) as Record<string, any>;
+  const entries = await getCollection(
+    collection as any,
+    (entry: { id: string }) => entry.id.startsWith(lang + '-')
+  );
+  return ((entries[0] as { data?: Record<string, any> } | undefined)?.data ?? {}) as Record<string, any>;
 }
 
 async function getRawSite(lang: Lang): Promise<Record<string, any>> {
