@@ -23,7 +23,7 @@ hero:
   ctaPrimary: Angebot anfordern
   ctaSecondary: Produkte ansehen
 home:
-  eyebrow: AIIOT | Connecting the Universe of Intelligence
+  eyebrow: AIIOT | DAS UNIVERSUM DER INTELLIGENZ VERBINDEN
   heroTitle: Jedem Gerät Wahrnehmung und Intelligenz geben
   heroSubtitle: Von drahtlosen Sensoren und Edge-Gateways bis zu SCADA- und Energiemanagement-Plattformen liefert AIIOT einen durchgängigen Industrial-IoT-Stack für smarte Fertigung und erneuerbare Energien.
   heroCta1: Angebot anfordern

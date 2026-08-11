@@ -23,7 +23,7 @@ hero:
   ctaPrimary: 获取报价
   ctaSecondary: 查看产品
 home:
-  eyebrow: AIIOT | Connecting the Universe of Intelligence
+  eyebrow: AIIOT | 智联万物
   heroTitle: 让每一台设备都拥有感知与智慧
   heroSubtitle: 从无线传感器、边缘计算网关到 SCADA 与能源管理平台，AIIOT 为智能制造与新能源提供端到云的工业物联网全栈方案。
   heroCta1: 获取报价
