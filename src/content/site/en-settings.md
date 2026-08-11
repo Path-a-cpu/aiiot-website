@@ -24,7 +24,7 @@ hero:
   ctaSecondary: View Products
 home:
   eyebrow: AIIOT | CONNECTING THE UNIVERSE OF INTELLIGENCE
-  heroTitle: Giving Every Device Perception and Intelligence
+  heroTitle: Empowering Every Device with Intelligence
   heroSubtitle: From wireless sensors and edge gateways to SCADA and energy-management platforms, AIIOT provides an end-to-cloud industrial IoT stack for smart manufacturing and new energy.
   heroCta1: Get a Quote
   heroCta2: View Products

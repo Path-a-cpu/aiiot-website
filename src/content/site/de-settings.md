@@ -24,7 +24,7 @@ hero:
   ctaSecondary: Produkte ansehen
 home:
   eyebrow: AIIOT | DAS UNIVERSUM DER INTELLIGENZ VERBINDEN
-  heroTitle: Jedem Gerät Wahrnehmung und Intelligenz geben
+  heroTitle: Jedem Gerät Intelligenz verleihen
   heroSubtitle: Von drahtlosen Sensoren und Edge-Gateways bis zu SCADA- und Energiemanagement-Plattformen liefert AIIOT einen durchgängigen Industrial-IoT-Stack für smarte Fertigung und erneuerbare Energien.
   heroCta1: Angebot anfordern
   heroCta2: Produkte ansehen
