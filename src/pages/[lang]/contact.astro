@@ -32,11 +32,12 @@ const t = await getTranslations(lang);
       </div>
 
       <!--
-        TODO: 把下面 access_key 换成你在 https://web3forms.com 免费获取的 key
-        注册后复制 Access Key 粘贴到 value 里即可，询盘会发到 business@x-aiiot.com。
+        web3forms access_key 已配置。
+        该 key 注册自 3223905573@qq.com，询盘通知会发到该邮箱。
+        如需更换接收邮箱，用新邮箱重新生成 key 并替换下方 value。
       -->
       <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="access_key" value="99cb3703-0f8e-407c-9043-adecf338a908" />
         <input type="hidden" name="subject" value="New Inquiry from AIIOT Website" />
         <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 
