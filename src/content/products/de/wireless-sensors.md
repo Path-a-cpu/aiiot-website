@@ -6,4 +6,4 @@ image: /images/wireless-sensors.jpg
 order: 1
 ---
 
-Zuverlässige drahtlose Sensornetzwerke für industrielle Umgebungen. Langstreckenübertragung, batteriebetriebener Betrieb und nahtlose Integration mit aiiot-Überwachungsplattformen.
+Zuverlässige drahtlose Sensornetzwerke für industrielle Umgebungen. Langstreckenübertragung, batteriebetriebener Betrieb und nahtlose Integration mit AIIOT-Überwachungsplattformen.

@@ -19,13 +19,13 @@ cat:
   auto: AI+自动化
 hero:
   title: 工业物联网 AIIOT 解决方案专家
-  subtitle: aiiot 数采物联以 AI+ 软件、边缘计算、无线传感、智能连接与自动化，构建设备到云端的数据智能闭环。
+  subtitle: AIIOT 数采物联以 AI+ 软件、边缘计算、无线传感、智能连接与自动化，构建设备到云端的数据智能闭环。
   ctaPrimary: 获取报价
   ctaSecondary: 查看产品
 home:
   eyebrow: AIIOT | Connecting the Universe of Intelligence
   heroTitle: 让每一台设备都拥有感知与智慧
-  heroSubtitle: 从无线传感器、边缘计算网关到 SCADA 与能源管理平台，aiiot 为智能制造与新能源提供端到云的工业物联网全栈方案。
+  heroSubtitle: 从无线传感器、边缘计算网关到 SCADA 与能源管理平台，AIIOT 为智能制造与新能源提供端到云的工业物联网全栈方案。
   heroCta1: 获取报价
   heroCta2: 查看产品
   categoriesTitle: AI+ 五大产品矩阵
@@ -102,11 +102,16 @@ contact:
   mobile: 手机 / WhatsApp
   person: 联系人
   address: 地址
+  address1: FLAT 2401-16, 24/F, Wing Shing Ind Building, 26 Ng Fong Street, San Po Kong, Hong Kong
+  address2: 上海市松江区欣浪路888弄6号楼16层
+  address3: 河南省平顶山市汝州市钟楼街道东盛街19号
+  address4: 郑州市郑东新区金水东路49号原盛国际1号楼B座
+  address5: 孟加拉国达卡古尔山路105号9号楼8A室
 footer:
   contact: 联系方式
   products: 产品
   solutions: 解决方案
   company: 公司
-  rights: Copyright © 2021-2025 aiiot Technology 版权所有。
+  rights: Copyright © 2021-2025 AIIOT Technology 版权所有。
   tagline: 让数据采集更简单。
 ---

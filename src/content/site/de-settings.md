@@ -19,13 +19,13 @@ cat:
   auto: KI+ Automatisierung
 hero:
   title: Experte für industrielle IoT-AIIOT-Lösungen
-  subtitle: aiiot bietet KI+ Software, Edge-Computing, drahtlose Sensorik, intelligente Konnektivität und Automatisierung für den Daten-Intelligenz-Kreislauf vom Gerät in die Cloud.
+  subtitle: AIIOT bietet KI+ Software, Edge-Computing, drahtlose Sensorik, intelligente Konnektivität und Automatisierung für den Daten-Intelligenz-Kreislauf vom Gerät in die Cloud.
   ctaPrimary: Angebot anfordern
   ctaSecondary: Produkte ansehen
 home:
   eyebrow: AIIOT | Connecting the Universe of Intelligence
   heroTitle: Jedem Gerät Wahrnehmung und Intelligenz geben
-  heroSubtitle: Von drahtlosen Sensoren und Edge-Gateways bis zu SCADA- und Energiemanagement-Plattformen liefert aiiot einen durchgängigen Industrial-IoT-Stack für smarte Fertigung und erneuerbare Energien.
+  heroSubtitle: Von drahtlosen Sensoren und Edge-Gateways bis zu SCADA- und Energiemanagement-Plattformen liefert AIIOT einen durchgängigen Industrial-IoT-Stack für smarte Fertigung und erneuerbare Energien.
   heroCta1: Angebot anfordern
   heroCta2: Produkte ansehen
   categoriesTitle: KI+ Fünf Produktfamilien
@@ -43,7 +43,7 @@ home:
     - label: PV & Neue Energien
     - label: Smart City
     - label: Energie & Strom
-  statsTitle: aiiot · Das Daten-Fundament
+  statsTitle: AIIOT · Das Daten-Fundament
   stats:
     - value: Staatlich
       label: High-Tech-Unternehmen
@@ -59,7 +59,7 @@ home:
   ctaSubtitle: Senden Sie Ihre Anforderungen und erhalten Sie innerhalb von 24 Stunden ein maßgeschneidertes IoT-Angebot.
   ctaButton: Jetzt kontaktieren
 features:
-  title: Warum aiiot
+  title: Warum AIIOT
   subtitle: National High-Tech-Unternehmen, spezialisiert auf industrielles IoT und digitale Transformation
   feature1Title: National High-Tech-Unternehmen
   feature1Desc: Zertifiziertes High-Tech-Unternehmen mit F&E-Kompetenz im industriellen IoT.
@@ -78,8 +78,8 @@ cta:
   subtitle: Senden Sie Ihre Anforderungen und erhalten Sie innerhalb von 24 Stunden ein maßgeschneidertes IoT-Angebot.
   button: Jetzt kontaktieren
 about:
-  title: Über aiiot
-  p1: Die Shanghai aiiot Technology Co., Ltd. ist ein nationales High-Tech-Unternehmen, das auf industrielles IoT und digitale Unternehmenstransformation spezialisiert ist. Wir bieten kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme, Energiemanagementplattformen und mehr.
+  title: Über AIIOT
+  p1: Die Shanghai AIIOT Technology Co., Ltd. ist ein nationales High-Tech-Unternehmen, das auf industrielles IoT und digitale Unternehmenstransformation spezialisiert ist. Wir bieten kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme, Energiemanagementplattformen und mehr.
   p2: Unsere Lösungen dienen der intelligenten Fertigung, der PV-Neuenergie und weiteren Branchen. Mit Standorten in Shanghai, Henan, Zhengzhou und Bangladesch unterstützen wir globale Kunden mit zuverlässigen Produkten und lokalem Service.
   p3: Kontaktieren Sie uns unter business@x-aiiot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.
 products:
@@ -102,11 +102,16 @@ contact:
   mobile: Mobil / WhatsApp
   person: Ansprechpartner
   address: Adresse
+  address1: FLAT 2401-16, 24/F, Wing Shing Ind Building, 26 Ng Fong Street, San Po Kong, Hong Kong
+  address2: 16. Stock, Gebäude 6, Nr. 888 Xinlang Road, Songjiang District, Shanghai
+  address3: Nr. 19 Dongsheng Straße, Zhonglou Straße, Ruzhou Stadt, Pingdingshan Stadt, Henan Provinz
+  address4: Block B, Gebäude 1, Yuan Sheng International, Nr. 49 Jinshui Oststraße, Zhengdong Neubezirk, Zhengzhou
+  address5: Raum 8A, Gebäude 9, Nr. 105 Gulshan Straße, Dhaka, Bangladesch
 footer:
   contact: Kontakt
   products: Produkte
   solutions: Lösungen
   company: Unternehmen
-  rights: Copyright © 2021-2025 aiiot Technology. Alle Rechte vorbehalten.
+  rights: Copyright © 2021-2025 AIIOT Technology. Alle Rechte vorbehalten.
   tagline: Datenerfassung einfacher machen.
 ---

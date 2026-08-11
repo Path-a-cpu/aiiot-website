@@ -6,4 +6,4 @@ image: /images/wireless-sensors.jpg
 order: 1
 ---
 
-Reliable wireless sensor networks for industrial environments. Our sensors support long-range transmission, battery-powered operation and seamless integration with aiiot monitoring platforms.
+Reliable wireless sensor networks for industrial environments. Our sensors support long-range transmission, battery-powered operation and seamless integration with AIIOT monitoring platforms.
