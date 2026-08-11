@@ -102,7 +102,7 @@ contact:
   mobile: 手机 / WhatsApp
   person: 联系人
   address: 地址
-  address1: FLAT 2401-16, 24/F, Wing Shing Ind Building, 26 Ng Fong Street, San Po Kong, Hong Kong
+  address1: 香港新蒲岗五芳街26号荣盛工业大厦24楼2401-16室
   address2: 上海市松江区欣浪路888弄6号楼16层
   address3: 河南省平顶山市汝州市钟楼街道东盛街19号
   address4: 郑州市郑东新区金水东路49号原盛国际1号楼B座
