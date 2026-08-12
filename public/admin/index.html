@@ -37,11 +37,22 @@
             }
           });
         }
-        if (window.MutationObserver) {
-          new MutationObserver(fixPanes).observe(document.body, { childList: true, subtree: true });
+        // 集合列表页没有 .Pane，需要让 #nc-root 本身可滚动；编辑页有 .Pane 时保持 hidden
+        function fixRootScroll() {
+          var root = document.getElementById('nc-root');
+          if (!root) return;
+          var hasPanes = document.querySelectorAll('.Pane').length > 0;
+          root.style.overflow = hasPanes ? 'hidden' : 'auto';
         }
-        setInterval(fixPanes, 1000);
-        fixPanes();
+        function runAll() {
+          fixPanes();
+          fixRootScroll();
+        }
+        if (window.MutationObserver) {
+          new MutationObserver(runAll).observe(document.body, { childList: true, subtree: true });
+        }
+        setInterval(runAll, 1000);
+        runAll();
       })();
     </script>
   </body>
