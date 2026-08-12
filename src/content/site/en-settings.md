@@ -113,5 +113,5 @@ footer:
   solutions: Solutions
   company: Company
   rights: Copyright © 2021-2025 AIIOT Technology. All Rights Reserved.
-  tagline: Making Data Collection Simpler.
+  tagline: Connecting the Universe of Intelligence.
 ---

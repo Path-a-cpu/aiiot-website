@@ -113,5 +113,5 @@ footer:
   solutions: 解决方案
   company: 公司
   rights: Copyright © 2021-2025 AIIOT Technology 版权所有。
-  tagline: 让数据采集更简单。
+  tagline: 智联万物。
 ---

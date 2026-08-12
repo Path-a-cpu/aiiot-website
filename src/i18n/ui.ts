@@ -74,7 +74,7 @@ export const ui = {
 
     'footer.contact': 'Contact',
     'footer.rights': 'Copyright © 2021-2025 aiiot Technology. All Rights Reserved.',
-    'footer.tagline': 'Making Data Collection Simpler.',
+    'footer.tagline': 'Connecting the Universe of Intelligence.',
   },
 
   zh: {
@@ -148,7 +148,7 @@ export const ui = {
 
     'footer.contact': '联系方式',
     'footer.rights': 'Copyright © 2021-2025 aiiot Technology 版权所有。',
-    'footer.tagline': '让数据采集更简单。',
+    'footer.tagline': '智联万物。',
   },
 
   de: {
@@ -222,7 +222,7 @@ export const ui = {
 
     'footer.contact': 'Kontakt',
     'footer.rights': 'Copyright © 2021-2025 aiiot Technology. Alle Rechte vorbehalten.',
-    'footer.tagline': 'Datenerfassung einfacher machen.',
+    'footer.tagline': 'Das Universum der Intelligenz verbinden.',
   },
 } as const;
 
