@@ -41,7 +41,7 @@ export const ui = {
     'about.p2':
       'Our solutions serve smart manufacturing, PV new energy and other industries. With service locations in Shanghai, Henan, Zhengzhou and Bangladesh, we support global clients with reliable products and local service.',
     'about.p3':
-      'Contact us at business@x-aiiot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.',
+      'Contact us at weiming@x-aiiot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.',
 
     'products.title': 'Products & Solutions',
     'products.subtitle': 'Industrial IoT hardware and software for data acquisition, monitoring and management',
@@ -115,7 +115,7 @@ export const ui = {
     'about.p2':
       '公司服务智能制造、光伏新能源等领域，在上海、河南、郑州及孟加拉设有服务网点，为全球客户提供可靠产品与本地化服务。',
     'about.p3':
-      '欢迎通过 business@x-aiiot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。',
+      '欢迎通过 weiming@x-aiiot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。',
 
     'products.title': '产品与解决方案',
     'products.subtitle': '面向数据采集、监控与管理的工业物联网软硬件产品',
@@ -189,7 +189,7 @@ export const ui = {
     'about.p2':
       'Unsere Lösungen dienen der intelligenten Fertigung, der PV-Neuenergie und weiteren Branchen. Mit Standorten in Shanghai, Henan, Zhengzhou und Bangladesch unterstützen wir globale Kunden mit zuverlässigen Produkten und lokalem Service.',
     'about.p3':
-      'Kontaktieren Sie uns unter business@x-aiiot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.',
+      'Kontaktieren Sie uns unter weiming@x-aiiot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.',
 
     'products.title': 'Produkte & Lösungen',
     'products.subtitle': 'Industrielle IoT-Hardware und -Software für Datenerfassung, Überwachung und Management',
