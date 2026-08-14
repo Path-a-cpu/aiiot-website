@@ -1,0 +1,323 @@
+<p class="manual-img"><img src="/images/scada-manual/image2.png" alt="SCADA System screenshot" loading="lazy"></p>
+<table class="manual-table"><tr><th>[Shanghai Data Acquisition IOT Technology Co., LTD.]Data Acquisition System User Manual</th></tr><tr><td></td></tr><tr><td></td></tr><tr><td>Version: V 2.1</td></tr><tr><td></td></tr></table>
+<table class="manual-table"><tr><th>department</th><th>Product Department</th><th>Classification</th><th>Internal disclosure</th></tr><tr><td>Document No.</td><td></td><td>Written by</td><td></td></tr><tr><td>Creation Date</td><td>2022​</td><td>Last Updated</td><td>2022.04</td></tr></table>
+<h2>System Overview</h2>
+<h3>Functional Overview</h3>
+<p>DAQ for IIOT general industrial data acquisition system is a set of equipment data acquisition and management software running on edge computers. It is mainly used for data collection, control, storage, query, display and upload of various instruments and equipment (PLC, injection molding machines, CNC machine tools, electric meters, flow meters, etc.).</p>
+<p>The main functions of the system include:</p>
+<ul><li>Flexible transport configuration (link, storage, device, factor, upload service)</li><li>Data collection and upload</li><li>Real-time monitoring (device, upload)</li><li>Alarm configuration and monitoring</li><li>Data storage and query (tables, charts, Web API)</li><li>Configuration and visualization</li><li>User and permission management</li><li>Interface multi-language support</li></ul>
+<h3>Operating Environment</h3>
+<table class="manual-table"><tr><th style="background-color:#FFC000">project</th><th style="background-color:#FFC000">Require</th></tr><tr><td style="background-color:#FEF2CC">operating system</td><td style="background-color:#FEF2CC">Windows, Linux</td></tr><tr><td>Software Basic Environment</td><td>.NET 6</td></tr><tr><td style="background-color:#FEF2CC">Client browser</td><td style="background-color:#FEF2CC">Edge, Chrome, Firefox, Safari, Opera, etc.</td></tr><tr><td>Collection system access address</td><td>http://localhost:16801/scada.html</td></tr><tr><td style="background-color:#FEF2CC">Configure the visualization access address</td><td style="background-color:#FEF2CC">http://localhost:16804/diagram.html</td></tr></table>
+<h3>Supported devices</h3>
+<h4>Support communication links</h4>
+<p>Some of the communication links supported by the system include:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Link Type</th><th style="background-color:#FFC000">Communication Link</th></tr><tr><td style="background-color:#FEF2CC">TCP</td><td style="background-color:#FEF2CC">TCP Client</td></tr><tr><td></td><td>TCP Server</td></tr><tr><td style="background-color:#FEF2CC">Serial Port</td><td style="background-color:#FEF2CC">Serial UART</td></tr><tr><td>UDP</td><td>UDP</td></tr><tr><td style="background-color:#FEF2CC">HTTP</td><td style="background-color:#FEF2CC">HTTP Server</td></tr><tr><td></td><td>HTTP Client</td></tr><tr><td style="background-color:#FEF2CC">OPC</td><td style="background-color:#FEF2CC">OPC-UA</td></tr><tr><td></td><td>OPC-DA</td></tr><tr><td style="background-color:#FEF2CC">MQTT</td><td style="background-color:#FEF2CC">MQTT-TCP</td></tr><tr><td></td><td>MQTT-WebSocket</td></tr></table>
+<h4>Supported communication protocols</h4>
+<p>Some of the communication protocols supported by the system include:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Protocol Type</th><th style="background-color:#FFC000">Master Agreement</th><th style="background-color:#FFC000">Sub-protocol</th></tr><tr><td style="background-color:#FEF2CC">PLC Communication Protocol</td><td style="background-color:#FEF2CC">Modbus</td><td style="background-color:#FEF2CC">Modbus-RTU</td></tr><tr><td></td><td></td><td>Modbus-TCP</td></tr><tr><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC">Modbus-ASCII</td></tr><tr><td></td><td>Siemens S7</td><td></td></tr><tr><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC">Mitsubishi MELSEC communication protocol</td><td style="background-color:#FEF2CC">MELSEC-1E</td></tr><tr><td></td><td></td><td>MELSEC-3C</td></tr><tr><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC">MELSEC-3E</td></tr><tr><td></td><td></td><td>MELSEC-4C</td></tr><tr><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC">MELSEC-4D</td></tr><tr><td></td><td></td><td>Mitsubishi- Fx</td></tr><tr><td style="background-color:#FEF2CC">OPC Communication Protocol</td><td style="background-color:#FEF2CC">OPC-UA</td><td style="background-color:#FEF2CC"></td></tr><tr><td></td><td>OPC-DA</td><td></td></tr><tr><td style="background-color:#FEF2CC">MQTT communication protocol</td><td style="background-color:#FEF2CC">MQTT-JSON</td><td style="background-color:#FEF2CC"></td></tr><tr><td>Energy meter communication protocol</td><td>DL/T645</td><td></td></tr><tr><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC">DLMS</td><td style="background-color:#FEF2CC">DLMS-LN</td></tr><tr><td></td><td></td><td>DLMS-SN</td></tr><tr><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC">IEC62056-21</td><td style="background-color:#FEF2CC"></td></tr><tr><td></td><td>Edmi Command-Line</td><td></td></tr><tr><td style="background-color:#FEF2CC">IEC Communication Protocol</td><td style="background-color:#FEF2CC">IEC103</td><td style="background-color:#FEF2CC"></td></tr><tr><td></td><td>IEC104</td><td></td></tr><tr><td style="background-color:#FEF2CC">Environmental Monitoring Communication Protocol</td><td style="background-color:#FEF2CC">HJ212</td><td style="background-color:#FEF2CC"></td></tr><tr><td></td><td>SL651</td><td></td></tr><tr><td style="background-color:#FEF2CC"></td><td style="background-color:#FEF2CC">SZY206</td><td style="background-color:#FEF2CC"></td></tr></table>
+<h3>Glossary</h3>
+<h4>equipment</h4>
+<p>The system collects data from a device that has a communication interface and uses a specific communication protocol to communicate. The device can be a detection instrument, a small meter, a sensor, or even a separate PLC.</p>
+<h4>factor</h4>
+<p>Factors are attributes of a device, including its measured value, state, control unit, etc. For example, for a measuring instrument, the following attributes can be called a factor:</p>
+<ul><li>Latest measured value (measured value)</li><li>Current device status: measuring, standby, fault, etc. (status)</li><li>Start measurement, stop measurement (control unit)</li></ul>
+<h4>link</h4>
+<p>The physical connection method between the system and the device and the basic communication protocol, that is, the part below the link layer in the communication process. For example, it can be using a serial communication line and a UART communication protocol; or using a network cable and a TCP/IP communication protocol. It supports multiple devices sharing one link.</p>
+<h4>drive</h4>
+<p>A functional module that implements functions such as collection, upload, and storage. According to the functional division, it includes collection driver (implementing collection communication protocol parsing), upload driver (implementing upload communication protocol parsing), link driver (implementing the connection and data transmission and reception of specific links), and storage driver (implementing the storage and operation of specific databases).</p>
+<h4>Upload Service</h4>
+<p>The system uploads data to the platform or other devices using specific links and communication protocols.</p>
+<h4>Upload Factor</h4>
+<p>The factor to be uploaded to the platform or other device.</p>
+<h2>Service Concept</h2>
+<p>Our company solemnly promises:</p>
+<p>You buy not only the product, but also the meticulous and thoughtful technical support service ! ! ! ( =^_^= )</p>
+<p>For most of our wireless products, ordinary workers are needed to connect the power and install them on site! No debugging is required!</p>
+<p>We provide free remote guidance, remote configuration and debugging services, and send data to the user's designated cloud platform. (Hardware)</p>
+<p>Free IoT solution consulting services!</p>
+<h2>Software Installation and Authentication</h2>
+<h3>Installation on 64-bit Windows</h3>
+<h4>Environment Preparation</h4>
+<p>Before installing the system, please make sure that .NET6 has been successfully installed. You can download and install .NET6 from the Microsoft official website .</p>
+<table class="manual-table"><tr><th>https://download.visualstudio.microsoft.com/download/pr/9b8baa92-04f4-4b1a-8ccd-aa6bf31592bc/3a25c73326e060e04c119264ba58d0d5/dotnet-sdk-6.0.418-win-x64.exe</th></tr></table>
+<p>If you are using an older Windows system, you may need to install the following prerequisite packages first (if you are prompted during the installation process that the service cannot be started, this generally means that you need to install the prerequisite packages):</p>
+<p>Essential Package 1:</p>
+<table class="manual-table"><tr><th>https://download.visualstudio.microsoft.com/download/pr/b929b7fe-5c89-4553-9abe-6324631dcc3a/296F96CD102250636BCD23AB6E6CF70935337B1BBB3507FE8521D8D9CFAA932F/VC_redist.x64.exe</th></tr></table>
+<p>Essential Pack 2:</p>
+<table class="manual-table"><tr><th>https://download.microsoft.com/download/0/8/E/08E0386B-F6AF-4651-8D1B-C0A95D2731F0/Windows6.1-KB3063858-x64.msu</th></tr></table>
+<h4>Software Installation</h4>
+<p>After downloading the installation package, run the installation program, as shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image3.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>Select the installation directory and click the Start Installation button to complete the system installation.</p>
+<h3>Open the management page</h3>
+<p>After the system is installed, you can use a modern browser (Edge or Chrome is recommended) and enter http://localhost:16801/scada.html in the address bar to access the management page. Since the system requires login, you will first enter the login page:</p>
+<p class="manual-img"><img src="/images/scada-manual/image4.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>The default system accounts are:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">account</th><th style="background-color:#FFC000">password</th><th style="background-color:#FFC000">illustrate</th></tr><tr><td style="background-color:#FEF2CC">admin</td><td style="background-color:#FEF2CC">123456</td><td style="background-color:#FEF2CC">No user management privileges</td></tr><tr><td>super</td><td>123456</td><td>Full permissions</td></tr></table>
+<p>After logging in, you can enter the system homepage, as shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image5.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>If necessary, the system can switch the interface language freely. The following figure is the English interface:</p>
+<p class="manual-img"><img src="/images/scada-manual/image6.png" alt="SCADA System screenshot" loading="lazy"></p>
+<h3>System Certification</h3>
+<p>The system has a 14-day trial period. After the trial period, the system needs to be authenticated before it can be used normally (otherwise the system cannot collect data). The authentication operation is completed on the system configuration page (Settings-&gt;System Configuration):</p>
+<p class="manual-img"><img src="/images/scada-manual/image7.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>The certification process is:</p>
+<ol><li>Copy the machine code and provide it to the supplier.</li><li>Obtain certification documents from suppliers.</li><li>Upload the authentication document.</li></ol>
+<p>It should be noted that one authentication file can only authenticate one computer.</p>
+<h2>Transfer and storage configuration</h2>
+<h3>Transport Architecture</h3>
+<p>for collection, uploading and storage is shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image8.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>Generally speaking, the core function of the system is to collect data from the device, store the data, and upload it to the platform. Each transmission requires the use of a communication link and a certain communication protocol. Then, the entire transmission and storage process will have the following modules:</p>
+<ul><li>Communication Link</li><li>Collection Protocol</li><li>Upload Agreement</li><li>Storage Solutions</li></ul>
+<p>For each module, the system adopts a driver + configuration model to meet the needs. Taking the storage solution as an example, the storage driver contains the code to store data in a certain database (such as MySQL), while the storage configuration includes the connection string and when to store these contents.</p>
+<h3>Driver Management</h3>
+<p>The driver is a code library that implements specific functions and can be imported into the system as needed. The following is the management page of the acquisition driver:</p>
+<p class="manual-img"><img src="/images/scada-manual/image9.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>Generally, you can obtain the driver from the supplier, upload it to the system, and use it after configuration. For specific application scenarios, you can also develop the driver yourself according to the development documentation.</p>
+<h3>Data collection configuration</h3>
+<p>Data collection requires configuration of storage solutions, communication links, and communication protocols.</p>
+<h4>Storage Solutions</h4>
+<p>Each device can select a different storage solution (or all devices can select the same storage solution). The storage solution management page (Storage Management-&gt;Storage Solution) is shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image10.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>In the storage plan, you can select the type of database to be stored, the storage time, whether to store the status, the data format, etc.</p>
+<h5>Supported databases</h5>
+<p>The system supports databases such as SQLite, SQL Server, and MySQL.</p>
+<h5>Connection String</h5>
+<p>For SQLite database, fill in the file path in the connection string, such as:</p>
+<table class="manual-table"><tr><th>D:\db\mydb.db</th></tr></table>
+<p>The typical connection string format for SQL Server is:</p>
+<table class="manual-table"><tr><th>Data Source=MY-COMPUTER\ SQLEXPRESS;Initial Catalog= mydb;User Id= sa;Password =password;</th></tr></table>
+<p>The typical connection string format for MySQL is:</p>
+<table class="manual-table"><tr><th>User ID= root;Password =password;Host=localhost;Port=3306;Database=mydb;</th></tr></table>
+<h5>Storage time</h5>
+<p>There are two types of storage timing: interval time and specified time.</p>
+<p>The interval time needs to be filled in with a time in milliseconds . The data will be stored once every time this interval is reached . For example, if you fill in 60000, it will be stored once a minute.</p>
+<p>The format for specifying time is: ` HH:mm HH:mm HH:mm `, only hours and minutes are supported. Data will be stored once at the specified time of each day. For example, if you enter `08:00 12:00 16:00 `, data will be stored once at 8:00, 12:00, and 16:00.</p>
+<h5>Data Format</h5>
+<p>Data formats include strings and numbers. If all data collected by the system are numbers, it is recommended to use the number format, which can save space and improve performance. If the data includes non-numeric strings, you can only choose the string format.</p>
+<h5>Storage Status</h5>
+<p>checking the storage status, the database will store the current status of the device while storing the data. When the device is offline, the collected data will still be the value collected last time. For specific values of the device status, see Appendix 1.</p>
+<h5>Database maintenance</h5>
+<p>When the transmission configuration is modified, the database structure will be modified accordingly. In order to clean up redundant structures and data, the system provides three maintenance operations:</p>
+<p>Clean the table structure: clear unused columns and unused tables.</p>
+<p>Clear data: Clear all data.</p>
+<p>Rebuild table structure: Clear the old structure and data and recreate the table structure.</p>
+<h4>Link Configuration</h4>
+<p>The link configuration page (Transmission Configuration-&gt;Link Configuration) is shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image11.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>The currently supported link types and the contents that need to be configured are shown in the following table:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Link Type</th><th style="background-color:#FFC000">Contents to be configured</th></tr><tr><td style="background-color:#FEF2CC">TCP Client</td><td style="background-color:#FEF2CC">Server IP, server port, connection timeout, disconnection reconnection interval</td></tr><tr><td>Serial UART</td><td>Serial port number, baud rate, parity bit, data bit, stop bit</td></tr><tr><td style="background-color:#FEF2CC">TCP Server</td><td style="background-color:#FEF2CC">Server IP, Server port</td></tr><tr><td>UDP</td><td>Remote IP, Remote Port, Local IP, Local Port</td></tr><tr><td style="background-color:#FEF2CC">OPC-UA</td><td style="background-color:#FEF2CC">Service URL, certificate directory, certificate subject, user name, password</td></tr><tr><td>MQTT</td><td>Basic protocol, MQTT host, MQTT port, user name, password, subscription topic</td></tr><tr><td style="background-color:#FEF2CC">HTTP Client</td><td style="background-color:#FEF2CC">URL</td></tr><tr><td>HTTP Server</td><td>IP address, port</td></tr></table>
+<h4>Device Configuration</h4>
+<h5>Device Configuration</h5>
+<p>Device configuration is mainly about the configuration of communication protocol. The device configuration page (Transmission Configuration-&gt;Device Configuration) is shown in the figure below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image12.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>Devices using different drivers will have different configuration information. However, all devices need to configure certain information, as shown in the following table:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Configuration Content</th><th style="background-color:#FFC000">illustrate</th></tr><tr><td style="background-color:#FEF2CC">Using the driver</td><td style="background-color:#FEF2CC">The driver used by the device. You can select the driver added in the acquisition driver page.</td></tr><tr><td>Use Link</td><td>The link used by the device. The link added in the link configuration page is optional.</td></tr><tr><td style="background-color:#FEF2CC">Storage Solutions</td><td style="background-color:#FEF2CC">The storage solution used by the device. You can add storage solutions on the optional storage solution page.</td></tr><tr><td>Collection interval</td><td>The frequency at which the terminal sends commands to the device when collecting data . The unit is milliseconds.</td></tr><tr><td style="background-color:#FEF2CC">Receiving Waiting</td><td style="background-color:#FEF2CC">the terminal sends a command to the device , the expected time for the device to respond normally. The unit is milliseconds.</td></tr><tr><td>Cycle Wait</td><td>The waiting time for the next instruction cycle after one instruction cycle ends. The unit is milliseconds.</td></tr></table>
+<h5>Factor configuration</h5>
+<p>The device contains factors (devices without added factors generally do not collect data). The factor configuration page (from the device configuration page, click the button on the far right of a device to enter) is shown in the figure below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image13.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>Devices using different drivers require different information to be configured. Several common properties are described below:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Configuration Content</th><th style="background-color:#FFC000">illustrate</th></tr><tr><td style="background-color:#FEF2CC">unit</td><td style="background-color:#FEF2CC">Data unit.</td></tr><tr><td>Decimal Places</td><td>The number of decimal places when displaying data. If it is -1, the original value is used. The data in the database ignores this configuration.</td></tr><tr><td style="background-color:#FEF2CC">Whether to store</td><td style="background-color:#FEF2CC">Only when this is checked will the data be stored in the database.</td></tr><tr><td>expression</td><td>The data are calculated and transformed as described in Appendix 2.</td></tr></table>
+<h3>Data upload configuration</h3>
+<p>Data upload requires configuration of communication link and communication protocol. The configuration of communication link is the same as that of data collection.</p>
+<p>upload service configuration page (Transfer Configuration -&gt; Upload Configuration) is shown in the figure below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image14.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>the upload service, you need to configure the upload factor. You can configure it on the upload factor configuration page (from the upload configuration page, click the button on the far right of an upload service to enter), as shown in the following figure:</p>
+<p class="manual-img"><img src="/images/scada-manual/image15.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>The configuration content varies according to the protocol. The following are the common properties of each upload factor:</p>
+<p>coding</p>
+<p>For most upload protocols, if you fill in the field, the data will be uploaded with the code. If you do not fill in the field, the data will be uploaded with the original name of the factor. For example, for the MQTT upload protocol, if the factor is device1.factor1, if you do not fill in the field, the topic of the upload is data/device1.factor1; if you fill in the field code1, the topic of the upload is data/code1.</p>
+<h3>Configuration import and export</h3>
+<h4>Configuration Export</h4>
+<p>Export the configuration in the Configuration Export page (Transfer Configuration -&gt; Configuration Export), as shown in the following figure:</p>
+<p class="manual-img"><img src="/images/scada-manual/image16.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>During the export process, you need to select the device to be exported and the upload service. When exporting, the related link configuration and storage solution will be exported at the same time.</p>
+<h4>Configuration Import</h4>
+<p>Import the configuration in the Configuration Import page (Transfer Configuration -&gt; Configuration Import), as shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image17.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>When importing configuration, you can choose from the following options based on actual conditions:</p>
+<p>Clear configuration: Clear all configured contents.</p>
+<p>Direct overwrite: Clear all original configurations first, and then add the imported configuration.</p>
+<p>Supplemental configuration: Add imported configuration incrementally. If the original configuration and the imported configuration have the same ID or name, the imported configuration will not be used.</p>
+<h2>Real-time monitoring</h2>
+<h3>System start and stop</h3>
+<p>In the system title bar, you can start or stop the system, as shown in the following figure:</p>
+<p class="manual-img"><img src="/images/scada-manual/image18.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>The start and stop here refers to the start and stop of the entire system (including collection and upload). If you want to suspend a device or an upload service, you can operate (disable or enable) on the device monitoring and upload monitoring pages.</p>
+<h3>Equipment Monitoring</h3>
+<p>If you need to view the current collection status, you can open the device monitoring page (Data Monitoring-&gt;Device Monitoring), as shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image19.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>From this page, you can:</p>
+<ul><li>Check the real-time status of the device. For the description of the device status, please refer to Appendix 1.</li><li>View the real-time value of each factor, as well as the current data time.</li><li>Enable or disable a device.</li><li>Reverse control of the device to modify the factor value. This operation will send a change value and write command to the device , not a virtual change value.</li></ul>
+<h3>Upload monitoring</h3>
+<p>On the upload monitoring page (Data Monitoring -&gt; Upload Monitoring), you can view the current upload status, as shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image20.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>You can also pause uploading on this page.</p>
+<h2>Historical data query</h2>
+<h3>Data Query</h3>
+<p>You can use tables or charts to query historical data. If you find that there is no data when querying data, the possible reasons are:</p>
+<ul><li>When configuring the factor, whether to store is not checked.</li><li>Database configuration, storage time is not to store.</li><li>Collection was not started.</li><li>No legitimate data has yet appeared.</li></ul>
+<h3>Table method</h3>
+<p>The data queried using the table method is detailed data. The data query page (Statistical Analysis-&gt;Data Query) is shown in the figure below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image21.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>Select the factor you want to query on the left side of the page, select the start time and end time, and you can query the results.</p>
+<p>When a sign like [Ex] appears in front of the data (or the data starts with @), it means that the data is abnormal. The data at this time is only a historical retention value and cannot be used in practice. For example, when the link is disconnected or the device is disabled, if the query result still has a value, the result at this time is meaningless. The brackets represent the device status, please refer to Appendix 1.</p>
+<h3>Chart Mode</h3>
+<p>The data queried using the chart method is only brief data (when the amount of data is large, not all data will be displayed in the chart). The data chart page (Statistical Analysis-&gt;Data Chart) is shown in the figure below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image22.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p class="manual-img"><img src="/images/scada-manual/image23.png" alt="SCADA System screenshot" loading="lazy"></p>
+<h2>Alarm configuration and monitoring</h2>
+<h3>Alarm Configuration</h3>
+<p>Configure the alarm on the alarm configuration page (Transmission Configuration -&gt; Alarm Configuration), as shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image24.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>For each alarm, the configurable information includes the alarm title, alarm level, and the conditions that trigger the alarm. The expression used in the trigger condition is a logical expression, and the factors are enclosed in curly brackets. For details, please refer to Appendix 2.</p>
+<h3>Alarm storage</h3>
+<p>By default, alarm information is not stored. If storage is required, a storage plan needs to be set. Set the storage plan in the alarm storage plan setting page (Storage Management -&gt; Alarm Storage Plan), as shown in the following figure:</p>
+<p class="manual-img"><img src="/images/scada-manual/image25.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>In general, you only need to fill in the connection string.</p>
+<p>Finally, return to the alarm configuration page (Transmission Configuration -&gt; Alarm Configuration), click the second button in the upper right corner, and select the alarm storage solution:</p>
+<p class="manual-img"><img src="/images/scada-manual/image26.png" alt="SCADA System screenshot" loading="lazy"></p>
+<h3>Alarm monitoring</h3>
+<p>The alarm information generated by the system in real time can be viewed in the alarm monitoring page (Data Monitoring -&gt; Alarm Monitoring):</p>
+<p class="manual-img"><img src="/images/scada-manual/image27.png" alt="SCADA System screenshot" loading="lazy"></p>
+<h3>Alarm query</h3>
+<p>All alarm information generated by the system can be queried in the alarm query interface (Statistical Analysis-&gt;Alarm Query), as shown in the following figure:</p>
+<p class="manual-img"><img src="/images/scada-manual/image28.png" alt="SCADA System screenshot" loading="lazy"></p>
+<h2>User and permissions management</h2>
+<h3>Default User</h3>
+<p>By default, there are two users in the system, as shown in the following table:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">account</th><th style="background-color:#FFC000">password</th><th style="background-color:#FFC000">Permissions</th></tr><tr><td style="background-color:#FEF2CC">admin</td><td style="background-color:#FEF2CC">123456</td><td style="background-color:#FEF2CC">Super Administrator</td></tr><tr><td>super</td><td>123456</td><td>administrator</td></tr></table>
+<p>After officially using the system, if permission control is required, the initial password should be modified.</p>
+<h3>User roles</h3>
+<p>The system-defined roles and their permissions are shown in the following table:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Permissions</th><th style="background-color:#FFC000">Visitors</th><th style="background-color:#FFC000">Operator</th><th style="background-color:#FFC000">Super Operator</th><th style="background-color:#FFC000">administrator</th><th style="background-color:#FFC000">Super Administrator</th></tr><tr><td style="background-color:#FEF2CC">Data Query</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td></tr><tr><td>Monitoring equipment</td><td>have</td><td>have</td><td>have</td><td>have</td><td>have</td></tr><tr><td style="background-color:#FEF2CC">Control Equipment</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td></tr><tr><td>Start-Stop System</td><td>none</td><td>none</td><td>have</td><td>have</td><td>have</td></tr><tr><td style="background-color:#FEF2CC">Transport Configuration</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">have</td><td style="background-color:#FEF2CC">have</td></tr><tr><td>System Configuration</td><td>none</td><td>none</td><td>none</td><td>have</td><td>have</td></tr><tr><td style="background-color:#FEF2CC">User Management</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">none</td><td style="background-color:#FEF2CC">have</td></tr></table>
+<h2>Configuration visualization</h2>
+<h3>Functional Overview</h3>
+<p>This system provides configuration and visualization functions, with powerful low-code visualization building and orchestration capabilities, simple configuration, rich controls, and high degree of customization. Combined with data acquisition and control systems, it can realize the display of real-time and historical data, as well as real-time control of equipment.</p>
+<p>The system supports the following functions:</p>
+<ul><li>User-defined images can be added (supporting JPG, PNG, GIF, SVG and other formats).</li><li>User-defined components can be added.</li><li>Supports data display components such as tables and charts.</li><li>Both real-time data and historical data can be displayed.</li><li>Can send control commands to the device .</li><li>Provides a large number of auxiliary design functions (auxiliary lines, rulers, magnets, alignment, etc.).</li></ul>
+<h3>Application Examples</h3>
+<p>The following is a page designed using the visualization function:</p>
+<p class="manual-img"><img src="/images/scada-manual/image29.png" alt="SCADA System screenshot" loading="lazy"></p>
+<h3>Interface Introduction</h3>
+<h4>Visual home page</h4>
+<p>The system home page is shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image30.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>You can add multiple views to this page. For each view, click the screen to enter the running page, and click the design button in the lower right corner to design the screen.</p>
+<h4>Visual design page</h4>
+<p>The system design page is shown below:</p>
+<p class="manual-img"><img src="/images/scada-manual/image31.png" alt="SCADA System screenshot" loading="lazy"></p>
+<h5>Page General Administration</h5>
+<p>At the top of the design page is the title bar. Click the view name to modify it, and click the preview button to enter the run page.</p>
+<p>On the left side of the main part is the resource library, including the component library and image library, and you can drag resources to the main canvas.</p>
+<p>On the right side of the main part is the property configuration panel. Selecting different elements will display the element's unique property configuration.</p>
+<p>The center of the main part is the main canvas, where you can drag and adjust the position of resources. Below the main canvas are thumbnails and a display scale, where you can move and scale the main canvas.</p>
+<h5>General Design Steps</h5>
+<p>The general steps for designing a page are:</p>
+<p>1. Drag assets from the asset library to the canvas.</p>
+<p>2. Adjust the size and location of resources.</p>
+<p>3. Modify the resource's style, data source, and trigger events.</p>
+<h5>Resource Library</h5>
+<p>The system's resource library includes two types: component library and image library.</p>
+<p>The elements in the picture library are just simple pictures. Users can upload custom pictures. Supported formats include png , jpg, gif , svg , etc.</p>
+<p>The elements in the component library contain code functions and can provide richer interactive functions, such as charts, progress bars, input boxes, etc. Users can also develop components according to the development documents and then upload them to the system for use.</p>
+<h5>Resource attributes</h5>
+<p>Different types of resources have different properties, such as rectangles have corner radius properties, pipes have flow shape properties. However, the properties of all resources can be divided into three parts: style, database, and event.</p>
+<p>The style part includes information such as size, position, color, font, etc.</p>
+<p>The data source part defines how the resource changes dynamically, and completes the function by filling in expressions. For example, after filling in an expression like {D1.F1}==1 in the display condition, the resource will be displayed when D1.F1 is 1, and hidden in other cases. For another example, for text, after filling in an expression like current value: {D1.F1}, the resource will display the following text when D1.F1 is 1: Current value: 1.</p>
+<p>The event part defines what happens after some operations are performed on the resource on the running page. For example, if you fill in {D1.F1}=2 in the click event, then after the user clicks the resource, the system will send a command to the device to change the value to 2. For another example, if you fill in &lt;var1&gt;=value in the input box change value event , when the user enters 12.5 in the input box, the value of the variable var1 will change to 12.5.</p>
+<h4>Visual operation page</h4>
+<p>The running page only contains the designed content and no additional page elements, as shown in the following figure:</p>
+<p class="manual-img"><img src="/images/scada-manual/image32.png" alt="SCADA System screenshot" loading="lazy"></p>
+<p>On the Run page, available functions include:</p>
+<ul><li>Displays the device values collected in real time.</li><li>Displays data history.</li><li>Display dynamically changing system processes.</li><li>Send instructions and values to the device by operating page elements .</li><li>Switch to a different view page.</li></ul>
+<h3>Data Source</h3>
+<h4>Data Citation</h4>
+<p>To reference a factor in a data source, enclose the factor name in parentheses. The expression is:</p>
+<table class="manual-table"><tr><th>{Device name.Factor name}</th></tr></table>
+<p>To reference a temporary variable in a data source, add angle brackets around the variable name. The expression is:</p>
+<table class="manual-table"><tr><th>&lt;variable name&gt;</th></tr></table>
+<h4>Text data source</h4>
+<p>Text data sources can be written normally, and where data needs to be referenced, just insert a reference expression. For example:</p>
+<table class="manual-table"><tr><th>The current measured value is: {D1.F1} mg/L</th></tr></table>
+<h4>Conditional Data Sources</h4>
+<p>The conditional data source requires the written content to be a logical expression, such as:</p>
+<table class="manual-table"><tr><th>{D1.F1}&gt;=10 &amp;&amp; { D1.F2}&lt; =30</th></tr></table>
+<h4>Chart Data</h4>
+<p>The format for reading factor data is:</p>
+<table class="manual-table"><tr><th>factor|factors|minutes|interval|format</th></tr></table>
+<p>The first factor is a fixed string.</p>
+<p>factors is a list of factor names separated by commas, such as D1.F1,D1.F2.</p>
+<p>Minutes is the number of minutes of data to be retrieved .</p>
+<p>Interval is the interval in minutes between each piece of data.</p>
+<p>format is the time display format. The year, month, day, hour and minute are represented by yyyy , MM, dd, HH and mm respectively.</p>
+<p>Here is an example. Take the data of D1.F1 and D3.F1, take one piece of data every 5 minutes within one hour, and the time display format is HH:mm , then the content to be filled in is:</p>
+<table class="manual-table"><tr><th>factor|D1.F 1,D 3.F1|60|5|HH:mm</th></tr></table>
+<h3>event</h3>
+<h4>Event Overview</h4>
+<p>Each event can contain multiple instructions, separated by semicolons, such as:</p>
+<table class="manual-table"><tr><th>Instruction 1; Instruction 2; Instruction 3</th></tr></table>
+<p>Instruction types include modifying factors, modifying variables, switching pages, etc.</p>
+<h4>Modify Factor Event</h4>
+<p>The format of a modifier event is:</p>
+<table class="manual-table"><tr><th>{Device name.Factor name}=value</th></tr></table>
+<p>Other, the value can be a fixed number or a variable, such as:</p>
+<table class="manual-table"><tr><th>{ D1.F1}= &lt;var1&gt;</th></tr></table>
+<h4>Value Change Event</h4>
+<p>Some controls (such as input boxes) have value modification events. When the event occurs, use value to refer to the newly modified value. The format is:</p>
+<table class="manual-table"><tr><th>Factor or variable = value</th></tr></table>
+<p>Here is an example to implement such a function: add an input box and a button to the view, and when the button is clicked, the value of the input box is sent to the factor D1.F1. To complete such a function, enter the following in the input value change event:</p>
+<table class="manual-table"><tr><th>&lt;var1&gt;=value</th></tr></table>
+<p>Then in the button's click event enter:</p>
+<table class="manual-table"><tr><th>{ D1.F1}= &lt;var1&gt;</th></tr></table>
+<h4>Page switching events</h4>
+<p>The format of the page switching event is:</p>
+<table class="manual-table"><tr><th>page=page name[,new]</th></tr></table>
+<p>If you want to replace the current page, the command is:</p>
+<table class="manual-table"><tr><th>page=page name</th></tr></table>
+<p>If you want to open a new page, add "new" after the command, as shown below:</p>
+<table class="manual-table"><tr><th>page=page name,new</th></tr></table>
+<h2>Appendix 1 Equipment Status Codes</h2>
+<p>The device status codes and their meanings are shown in the following table:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Code</th><th style="background-color:#FFC000">Representative significance</th><th style="background-color:#FFC000">Cause</th></tr><tr><td style="background-color:#FEF2CC">0</td><td style="background-color:#FEF2CC">idle</td><td style="background-color:#FEF2CC"></td></tr><tr><td>1</td><td>success</td><td></td></tr><tr><td style="background-color:#FEF2CC">2</td><td style="background-color:#FEF2CC">Disable</td><td style="background-color:#FEF2CC"></td></tr><tr><td>3</td><td>No data collection required</td><td>The device has no factors configured.</td></tr><tr><td style="background-color:#FEF2CC">-1</td><td style="background-color:#FEF2CC">Link Error</td><td style="background-color:#FEF2CC">Link opening error, link disconnection, unable to send data, authentication failure.</td></tr><tr><td>-2</td><td>no reply</td><td>No response was received after sending data. If everything is normal, it is possible that the receiving wait time is set too short.</td></tr><tr><td style="background-color:#FEF2CC">-3</td><td style="background-color:#FEF2CC">Data Error</td><td style="background-color:#FEF2CC">Parsing error after receiving data. If everything is normal, it is possible that the communication protocol does not correspond or the configuration is wrong.</td></tr><tr><td>-9</td><td>Unknown error</td><td></td></tr></table>
+<h2>Appendix 2 Data Sources and Expressions</h2>
+<h3>A2.1 Variable reference</h3>
+<p>In device configuration, hardware is read and written by configuring a factor. Where expressions are used, this factor refers to the corresponding hardware. Use device name.factor name to represent factors.</p>
+<p>For example, a device D1 using the Modbus protocol is added, and a factor F1 is added to read and write the value of register address 40001. Then, D1.F1 represents register 40001.</p>
+<p>In expressions, variables need to be written in curly braces:</p>
+<table class="manual-table"><tr><th>{Device name.Factor name}</th></tr></table>
+<p>To reference itself, you can use this:</p>
+<table class="manual-table"><tr><th>{this}</th></tr></table>
+<h3>A2.2 Expression Types</h3>
+<p>There are four expressions used in the system, namely:</p>
+<p>Numeric expression: The result of the calculation is a numeric value, for example: {a}*2.5+3</p>
+<p>Logical expression: The result of the calculation is a logical value, for example: {a}&gt;10</p>
+<p>Text expression: can only calculate the content in the braces, there is no fixed format, for example: the value of a is {a}mg/L</p>
+<p>Command expression: There is an equal sign in the middle, the variable is on the left, and the value is on the right, for example: {a}=10</p>
+<h3>A2.3 Factor configuration expression</h3>
+<p>In the factor configuration, you can enter an expression. This is generally used when there is a functional relationship between the collected value and the actual displayed value. For example, the collected value is in kg, but the storage requirement is in g. Then, after this value is collected, an expression needs to be used for conversion.</p>
+<p>The factor configuration expression is a numerical expression. Taking the above example, assuming the factor is D1.F1, the actual factor needs to be multiplied by 1000. The expression can be written as:</p>
+<table class="manual-table"><tr><th>{ D1.F1 }* 1000</th></tr></table>
+<p>Since the factor filled in the expression is the current factor, you can also use this instead, as follows:</p>
+<table class="manual-table"><tr><th>{this}*1000</th></tr></table>
+<p>When the expression is simply multiplied by a factor, or a bias value is added (can only be multiplied or added), it can be abbreviated directly to:</p>
+<table class="manual-table"><tr><th>*1000</th></tr></table>
+<p>or</p>
+<table class="manual-table"><tr><th>+10</th></tr></table>
+<h2>Appendix 3 MODBUS Configuration Instructions</h2>
+<h3>A3.1 Driver and Link Selection</h3>
+<p>There are three types of Modbus protocols, namely Modbus-RTU, Modbus-TCP and Modbus-ASCII. You need to select the appropriate acquisition driver according to the actual situation. All three communication protocols can communicate under TCP client or serial port link.</p>
+<h3>A3.2 Collection interval selection</h3>
+<p>For Modbus communication protocol, the acquisition interval and cycle wait can be set to 0, and the receiving wait time needs to be more than 100ms. If you find that the data is chaotic when receiving data, it is generally caused by insufficient receiving wait time. If this problem occurs, you can increase the receiving wait time appropriately. If you want to know the more accurate time, you can send a Modbus command to the device and observe the time of data reply.</p>
+<h3>A3.3 Storage Mode</h3>
+<p>The Modbus protocol defines a variety of data storage spaces, including registers, coils, input registers, and input coils. The storage mode to be used is selected according to the document description.</p>
+<h3>A3.4 Channel Type</h3>
+<p>For registers, the channel types are various, including FLOAT, INT, BIT, etc.; while for coils, the channel type is only BIT.</p>
+<p>For multi-byte data, the storage order of bytes in different devices may be different, so you need to choose according to the actual situation. The following are commonly used byte orders:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Data Types</th><th style="background-color:#FFC000">Common byte order</th></tr><tr><td style="background-color:#FEF2CC">FLOAT</td><td style="background-color:#FEF2CC">FLOAT1032</td></tr><tr><td>INT</td><td>INT1032</td></tr><tr><td style="background-color:#FEF2CC">Unsigned</td><td style="background-color:#FEF2CC">Unsigned10</td></tr><tr><td>Signed</td><td>Unsigned10</td></tr></table>
+<h3>A3.5 Bitwise Value</h3>
+<p>Select register for storage mode and BIT for channel type, then you can get the value by bit. The starting address is the address of the register, and the bit address indicates which bit of data to get. The bit address is from right to left, that is, the rightmost bit is bit 0.</p>
+<h3>A3.6 Continuous Addresses</h3>
+<p>If there are several factor channels of the same type and with consecutive addresses, they can be configured once. Just fill in a value greater than 1 in the channel number, and the automatically created factor address will be automatically adjusted according to the channel type. The following is an example after the channel number is filled in with 5:</p>
+<table class="manual-table"><tr><th style="background-color:#FFC000">Storage Mode</th><th style="background-color:#FFC000">Channel Type</th><th style="background-color:#FFC000">Starting address</th><th style="background-color:#FFC000">Bit Address</th><th style="background-color:#FFC000">Generate Address</th></tr><tr><td style="background-color:#FEF2CC">register</td><td style="background-color:#FEF2CC">Signed10</td><td style="background-color:#FEF2CC">0</td><td style="background-color:#FEF2CC">/</td><td style="background-color:#FEF2CC">0 1 2 3 4</td></tr><tr><td>register</td><td>FLOAT1032</td><td>0</td><td>/</td><td>0 2 4 6 8</td></tr><tr><td style="background-color:#FEF2CC">Coil</td><td style="background-color:#FEF2CC">BIT</td><td style="background-color:#FEF2CC">0</td><td style="background-color:#FEF2CC">/</td><td style="background-color:#FEF2CC">0 1 2 3 4</td></tr><tr><td>register</td><td>BIT</td><td>0</td><td>13</td><td>0.13 0.14 0.15 1.0 1.1</td></tr></table>

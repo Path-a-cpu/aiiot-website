@@ -7,3 +7,5 @@ order: 3
 ---
 
 A web-based SCADA platform for monitoring production lines, utilities and remote equipment. Supports multi-user access, historical trends and custom dashboards.
+
+**Full user manual:** [SCADA System User Manual →](/en/software/scada-manual)

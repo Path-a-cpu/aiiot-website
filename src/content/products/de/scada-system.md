@@ -7,3 +7,5 @@ order: 3
 ---
 
 Eine webbasierte SCADA-Plattform zur Überwachung von Produktionslinien, Betriebsmitteln und entfernten Geräten. Unterstützt Mehrbenutzerzugriff, historische Trends und individuelle Dashboards.
+
+**Vollständiges Handbuch:** [SCADA-System Benutzerhandbuch →](/de/software/scada-manual)

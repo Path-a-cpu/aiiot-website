@@ -7,3 +7,5 @@ order: 3
 ---
 
 基于 Web 的 SCADA 平台，用于监控生产线、公辅设备与远程站点。支持多用户访问、历史趋势与自定义看板。
+
+**完整用户手册：** [SCADA 系统用户手册 →](/zh/software/scada-manual)

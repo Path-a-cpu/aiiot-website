@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getTranslations } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/config';
+import manualHtml from '../../../data/scada-manual.html?raw';
+
+export function getStaticPaths() {
+  return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = await getTranslations(lang);
+
+const titleMap: Record<Lang, string> = {
+  en: 'SCADA System User Manual',
+  zh: 'SCADA 系统用户手册',
+  de: 'SCADA-System Benutzerhandbuch',
+};
+const title = titleMap[lang];
+const productsHref = '/' + lang + '/products';
+const scadaHref = '/' + lang + '/products/scada-system';
+---
+
+<BaseLayout lang={lang} title={title + ' | AIIOT'} description="SCADA System (DAQ for IIoT) user manual">
+  <section class="bg-brand-dark">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <nav class="text-sm text-slate-400 mb-3">
+        <a href={productsHref} class="hover:text-brand">{t('nav.products')}</a>
+        <span class="mx-2">/</span>
+        <a href={scadaHref} class="hover:text-brand">SCADA System</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-200">{title}</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold text-white">{title}</h1>
+      <p class="mt-2 text-slate-300">DAQ for IIoT — Data Acquisition System (English)</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-12">
+    <div class="prose max-w-none manual-body" set:html={manualHtml} />
+    <p class="mt-10">
+      <a href={scadaHref} class="text-brand font-medium hover:underline">← SCADA System</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  .manual-body {
+    color: #1f2937;
+    line-height: 1.75;
+  }
+  .manual-body h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #0ea5e9;
+    padding-bottom: 0.5rem;
+  }
+  .manual-body h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #334155;
+  }
+  .manual-body h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+  .manual-body p {
+    margin-bottom: 1rem;
+  }
+  .manual-body ul,
+  .manual-body ol {
+    margin: 1rem 0 1.25rem 1.5rem;
+    padding-left: 1rem;
+  }
+  .manual-body ul {
+    list-style-type: decimal;
+  }
+  .manual-body ol {
+    list-style-type: decimal;
+  }
+  .manual-body li {
+    margin-bottom: 0.4rem;
+  }
+  .manual-body .manual-img {
+    text-align: center;
+    margin: 1.75rem 0;
+  }
+  .manual-body .manual-img img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .manual-body .manual-table {
+    font-size: 0.9rem;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 1.75rem;
+    border: 1px solid #cbd5e1;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-radius: 8px;
+  }
+  .manual-body .manual-table th,
+  .manual-body .manual-table td {
+    border: 1px solid #cbd5e1;
+    padding: 0.6rem 0.85rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .manual-body .manual-table th {
+    background-color: #0f172a;
+    color: #fff;
+    font-weight: 600;
+  }
+  .manual-body .manual-table tr:nth-child(even) td {
+    background-color: #f1f5f9;
+  }
+  .manual-body .manual-table tr:hover td {
+    background-color: #e0f2fe;
+  }
+</style>
