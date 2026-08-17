@@ -7,6 +7,13 @@ backend:
 locale: zh_Hans
 media_folder: public/images
 public_folder: /images
+# ── 图片物理分类约定 ──
+# 语言相关的产品图请用文件名前缀区分：en-（英文）/ zh-（中文）/ de-（德文），如 en-scada-cover.jpg
+# 也可手动归入 public/images/en、public/images/zh、public/images/de 子文件夹（已建好，含 .gitkeep）
+# 说明：Decap 默认媒体库是平铺的，上传只能进 public/images 根目录，不会自动按语言分文件夹；
+# 若想要"在后台点进子文件夹再上传"，需安装 decap-cms-media-library-folders 插件（ESM 接入，
+# 与当前 CDN 式后台有兼容性风险，且无法本地登录实测，需上线后登录后台确认）。
+
 i18n:
   structure: multiple_folders
   locales:
@@ -37,7 +44,7 @@ collections:
         name: image
         widget: image
         required: false
-        i18n: duplicate
+        i18n: true
       - label: 排序
         name: order
         widget: number
@@ -97,7 +104,7 @@ collections:
         name: image
         widget: image
         required: false
-        i18n: duplicate
+        i18n: true
       - label: 正文
         name: body
         widget: markdown
