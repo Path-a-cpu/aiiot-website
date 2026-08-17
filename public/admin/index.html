@@ -22,6 +22,10 @@
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- marked：预览模板里把 body 的 Markdown 渲染成带表格/列表的 HTML -->
+    <script src="https://unpkg.com/marked/marked.min.js"></script>
+    <!-- aiiot 自定义 Preview 模板（产品/博客），依赖上面的 h/createClass 与 marked -->
+    <script src="./preview.js"></script>
     <script>
       // 仅兜底：确保动态生成的 .Pane 拿到 overflow-y:auto，不接管滚轮
       (function () {
