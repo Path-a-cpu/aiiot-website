@@ -58,6 +58,25 @@
         setInterval(runAll, 1000);
         runAll();
       })();
+
+      // 把 Decap 预览面板里那句容易误会的“点击以预览”改成“产品页预览”
+      // （Decap 自带中文文案，不在小眼睛旁边、不像按钮，常让人误点。仅改显示文字，不改功能）
+      (function () {
+        function relabel() {
+          var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+          var node;
+          while ((node = walker.nextNode())) {
+            if (node.nodeValue && node.nodeValue.indexOf('点击以预览') !== -1) {
+              node.nodeValue = node.nodeValue.replace('点击以预览', '产品页预览');
+            }
+          }
+        }
+        if (window.MutationObserver) {
+          new MutationObserver(relabel).observe(document.body, { childList: true, subtree: true, characterData: true });
+        }
+        setInterval(relabel, 1500);
+        relabel();
+      })();
     </script>
   </body>
 </html>
