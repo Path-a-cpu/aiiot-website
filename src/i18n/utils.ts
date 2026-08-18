@@ -34,12 +34,14 @@ async function loadCollectionData(lang: Lang, collection: string): Promise<Recor
 }
 
 async function getRawSite(lang: Lang): Promise<Record<string, any>> {
-  const [siteData, solutionsData, servicesData, partnersData, supportData] = await Promise.all([
+  const [siteData, solutionsData, servicesData, partnersData, supportData, aboutData, contactData] = await Promise.all([
     loadCollectionData(lang, 'site'),
     loadCollectionData(lang, 'solutions'),
     loadCollectionData(lang, 'services'),
     loadCollectionData(lang, 'partners'),
     loadCollectionData(lang, 'support'),
+    loadCollectionData(lang, 'about'),
+    loadCollectionData(lang, 'contact'),
   ]);
 
   return {
@@ -48,6 +50,8 @@ async function getRawSite(lang: Lang): Promise<Record<string, any>> {
     services: servicesData,
     partners: partnersData,
     support: supportData,
+    about: aboutData,
+    contact: contactData,
   };
 }
 

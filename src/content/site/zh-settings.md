@@ -9,6 +9,7 @@ nav:
   services: 服务
   partners: 合作伙伴
   support: 支持
+  blog: 资讯
   contact: 联系我们
   cta: 获取报价
 cat:
@@ -77,36 +78,15 @@ cta:
   title: 开启您的智能工厂项目
   subtitle: 发送需求，24 小时内获取定制化物联网解决方案报价。
   button: 立即联系我们
-about:
-  title: 关于数采物联
-  p1: 上海数采物联网科技有限公司是国家级高新技术企业，专注于工业物联网和企业数字化转型，提供无线传感器、数据采集监控系统、SCADA系统、能源管理平台等解决方案。
-  p2: 公司服务智能制造、光伏新能源等领域，在上海、河南、郑州及孟加拉设有服务网点，为全球客户提供可靠产品与本地化服务。
-  p3: 欢迎通过 weiming@x-aiiot.com 或 400-9677-032 与我们联系，王亚乐及专业团队将竭诚为您服务。
 products:
   title: 产品与解决方案
   subtitle: 面向数据采集、监控与管理的工业物联网软硬件产品
   back: 返回产品
   all: 全部产品
   empty: 该分类下暂无产品，欢迎联系我们定制。
-contact:
-  title: 联系我们
-  subtitle: 告诉我们您的需求，通常 24 小时内回复。
-  infoTitle: 联系信息
-  name: 您的姓名
-  email: 电子邮箱
-  company: 公司名称
-  message: 留言内容
-  submit: 提交询盘
-  success: 感谢您的咨询！我们将在 24 小时内与您联系。
-  phone: 电话
-  mobile: 手机 / WhatsApp
-  person: 联系人
-  address: 地址
-  address1: 香港新蒲岗五芳街26号荣盛工业大厦24楼2401-16室
-  address2: 上海市松江区欣浪路888弄6号楼16层
-  address3: 河南省平顶山市汝州市钟楼街道东盛街19号
-  address4: 郑州市郑东新区金水东路49号原盛国际1号楼B座
-  address5: 孟加拉国达卡古尔山路105号9号楼8A室
+blog:
+  title: 资讯中心
+  subtitle: 行业洞察、产品动态与技术分享，助您紧跟工业物联网前沿。
 footer:
   contact: 联系方式
   products: 产品

@@ -26,6 +26,16 @@ const support = defineCollection({
   schema: z.object({ name: z.string().optional() }).passthrough()
 });
 
+const about = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/about' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
+const contact = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/contact' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
 const products = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/products' }),
   schema: z.object({
@@ -54,6 +64,8 @@ export const collections = {
   services,
   partners,
   support,
+  about,
+  contact,
   products,
   posts
 };

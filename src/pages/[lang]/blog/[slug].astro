@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getTranslations } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/config';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((entry) => {
+    const [lang, ...slugParts] = entry.id.split('/');
+    const slug = slugParts.join('/');
+    return {
+      params: { lang, slug },
+      props: { entry },
+    };
+  });
+}
+
+const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const { entry } = Astro.props;
+const t = await getTranslations(lang);
+const { Content } = await render(entry);
+const listHref = '/' + lang + '/blog';
+
+function fmt(d: Date | undefined) {
+  return d ? d.toISOString().slice(0, 10) : '';
+}
+---
+<BaseLayout lang={lang} title={entry.data.title + ' | AIIOT'} description={entry.data.description}>
+  <section class="bg-brand-dark">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <nav class="text-sm text-slate-400 mb-3">
+        <a href={listHref} class="hover:text-brand">{t('nav.blog')}</a>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold text-white">{entry.data.title}</h1>
+      {entry.data.pubDate && <p class="mt-2 text-slate-300 text-sm">{fmt(entry.data.pubDate)}</p>}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <article class="border-t border-slate-200 pt-8 text-slate-700 leading-relaxed space-y-4 prose max-w-none">
+      <Content />
+    </article>
+  </section>
+</BaseLayout>

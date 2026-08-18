@@ -9,6 +9,7 @@ nav:
   services: Services
   partners: Partners
   support: Support
+  blog: News
   contact: Contact
   cta: Get a Quote
 cat:
@@ -77,36 +78,15 @@ cta:
   title: Start Your Smart Factory Project
   subtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
   button: Contact Us Now
-about:
-  title: About AIIOT
-  p1: Shanghai AIIOT Technology Co., Ltd. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.
-  p2: Our solutions serve smart manufacturing, PV new energy and other industries. With service locations in Shanghai, Henan, Zhengzhou and Bangladesh, we support global clients with reliable products and local service.
-  p3: Contact us at weiming@x-aiiot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.
 products:
   title: Products & Solutions
   subtitle: Industrial IoT hardware and software for data acquisition, monitoring and management
   back: Back to Products
   all: All Products
   empty: No products in this category yet. Contact us for customization.
-contact:
-  title: Contact Us
-  subtitle: Tell us what you need — we usually reply within 24 hours.
-  infoTitle: Contact Information
-  name: Your Name
-  email: Email
-  company: Company
-  message: Your Message
-  submit: Send Inquiry
-  success: Thank you! We will contact you within 24 hours.
-  phone: Phone
-  mobile: Mobile / WhatsApp
-  person: Contact Person
-  address: Address
-  address1: FLAT 2401-16, 24/F, Wing Shing Ind Building, 26 Ng Fong Street, San Po Kong, Hong Kong
-  address2: 16/F, Building 6, No. 888 Xinlang Road, Songjiang District, Shanghai
-  address3: No. 19 Dongsheng Street, Zhonglou Street, Ruzhou City, Pingdingshan City, Henan Province
-  address4: Block B, Building 1, Yuan Sheng International, No. 49 Jinshui East Road, Zhengdong New District, Zhengzhou
-  address5: Room 8A, Building 9, No. 105 Gulshan Road, Dhaka, Bangladesh
+blog:
+  title: News & Insights
+  subtitle: Industry insights, product updates and technical sharing to keep you ahead in industrial IoT.
 footer:
   contact: Contact
   products: Products

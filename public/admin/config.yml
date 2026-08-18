@@ -328,22 +328,6 @@ collections:
           - name: button
             label: 按钮文字
             widget: string
-      - label: 关于我们页
-        name: about
-        widget: object
-        fields:
-          - name: title
-            label: 标题
-            widget: string
-          - name: p1
-            label: 段落1
-            widget: text
-          - name: p2
-            label: 段落2
-            widget: text
-          - name: p3
-            label: 段落3
-            widget: text
       - label: 产品页
         name: products
         widget: object
@@ -362,49 +346,6 @@ collections:
             widget: string
           - name: empty
             label: 空分类提示
-            widget: string
-      - label: 联系我们页
-        name: contact
-        widget: object
-        fields:
-          - name: title
-            label: 标题
-            widget: string
-          - name: subtitle
-            label: 副标题
-            widget: text
-          - name: infoTitle
-            label: 联系信息标题
-            widget: string
-          - name: name
-            label: 姓名框占位
-            widget: string
-          - name: email
-            label: 邮箱框占位
-            widget: string
-          - name: company
-            label: 公司框占位
-            widget: string
-          - name: message
-            label: 留言框占位
-            widget: string
-          - name: submit
-            label: 提交按钮
-            widget: string
-          - name: success
-            label: 提交成功提示
-            widget: string
-          - name: phone
-            label: 电话标签
-            widget: string
-          - name: mobile
-            label: 手机/WhatsApp标签
-            widget: string
-          - name: person
-            label: 联系人标签
-            widget: string
-          - name: address
-            label: 地址标签
             widget: string
       - label: 页脚
         name: footer
@@ -551,3 +492,101 @@ collections:
           - name: desc
             label: 支持描述
             widget: text
+  - name: about
+    label: 关于我们
+    folder: src/content/about
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - label: 标题
+        name: title
+        widget: string
+      - label: 段落1
+        name: p1
+        widget: text
+      - label: 段落2
+        name: p2
+        widget: text
+      - label: 段落3
+        name: p3
+        widget: text
+  - name: contact
+    label: 联系我们
+    folder: src/content/contact
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - label: 标题
+        name: title
+        widget: string
+      - label: 副标题
+        name: subtitle
+        widget: text
+      - label: 联系信息标题
+        name: infoTitle
+        widget: string
+      - label: 姓名框占位
+        name: name
+        widget: string
+      - label: 邮箱框占位
+        name: email
+        widget: string
+      - label: 公司框占位
+        name: company
+        widget: string
+      - label: 留言框占位
+        name: message
+        widget: string
+      - label: 提交按钮
+        name: submit
+        widget: string
+      - label: 提交成功提示
+        name: success
+        widget: string
+      - label: 电话标签
+        name: phone
+        widget: string
+      - label: 手机/WhatsApp标签
+        name: mobile
+        widget: string
+      - label: 联系人标签
+        name: person
+        widget: string
+      - label: 地址标签
+        name: address
+        widget: string
+      - label: 联系人姓名(真实值)
+        name: personName
+        widget: string
+      - label: 联系邮箱(真实值)
+        name: emailValue
+        widget: string
+      - label: 电话(真实值)
+        name: phoneValue
+        widget: string
+      - label: 手机/WhatsApp(真实值)
+        name: mobileValue
+        widget: string
+      - label: 地址1
+        name: address1
+        widget: string
+      - label: 地址2
+        name: address2
+        widget: string
+      - label: 地址3
+        name: address3
+        widget: string
+      - label: 地址4
+        name: address4
+        widget: string
+      - label: 地址5
+        name: address5
+        widget: string
