@@ -10,24 +10,26 @@ const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
 ---
 <BaseLayout lang={lang} title={t('contact.title') + ' | AIIOT'} description={t('contact.subtitle')}>
-  <section class="mx-auto max-w-4xl px-4 py-20">
-    <h1 class="text-4xl font-bold text-slate-900">{t('contact.title')}</h1>
-    <p class="mt-3 text-slate-500 mb-8">{t('contact.subtitle')}</p>
-
-    <div class="grid md:grid-cols-2 gap-12">
+  <!-- layout: max-w-6xl gives long EN/DE addresses room (revised 2026-08-19) -->
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid md:grid-cols-[3fr_4fr] gap-32 items-start">
       <div class="space-y-4 text-slate-700">
-        <h2 class="text-xl font-semibold text-slate-900">{t('contact.infoTitle')}</h2>
+        <h1 class="text-4xl font-bold text-slate-900">{t('contact.title')}</h1>
+        <p class="text-slate-500">{t('contact.subtitle')}</p>
+        <h2 class="text-xl font-semibold text-slate-900 pt-2">{t('contact.infoTitle')}</h2>
         <p><span class="font-medium">{t('contact.person')}:</span> Nicholas Wei</p>
         <p><span class="font-medium">{t('contact.email')}:</span> weiming@x-aiiot.com</p>
         <p><span class="font-medium">{t('contact.phone')}:</span> 400-9677-032</p>
         <p><span class="font-medium">{t('contact.mobile')}:</span> +86 134 5523 1614</p>
-        <div>
-          <p class="font-medium">{t('contact.address')}:</p>
-          <p class="text-sm text-slate-600 mt-1">1. {t('contact.address1')}</p>
-          <p class="text-sm text-slate-600">2. {t('contact.address2')}</p>
-          <p class="text-sm text-slate-600">3. {t('contact.address3')}</p>
-          <p class="text-sm text-slate-600">4. {t('contact.address4')}</p>
-          <p class="text-sm text-slate-600">5. {t('contact.address5')}</p>
+        <div class="break-words">
+          <p class="font-medium mb-2">{t('contact.address')}:</p>
+          <ol class="list-decimal pl-5 space-y-2 marker:text-slate-500 marker:font-medium">
+            <li class="text-sm text-slate-600">{t('contact.address1')}</li>
+            <li class="text-sm text-slate-600">{t('contact.address2')}</li>
+            <li class="text-sm text-slate-600">{t('contact.address3')}</li>
+            <li class="text-sm text-slate-600">{t('contact.address4')}</li>
+            <li class="text-sm text-slate-600">{t('contact.address5')}</li>
+          </ol>
         </div>
       </div>
 
@@ -36,7 +38,7 @@ const t = await getTranslations(lang);
         该 key 于 2026-08-13 重新生成替换旧 key，询盘通知发到生成此 key 时所用邮箱（在 Web3Forms 后台可查）。
         如需更换接收邮箱，用新邮箱重新生成 key 并替换下方 value。
       -->
-      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-3">
         <input type="hidden" name="access_key" value="1a4596ed-4a96-4c5f-8f78-d5045b3fbf52" />
         <input type="hidden" name="subject" value="New Inquiry from AIIOT Website" />
         <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
@@ -55,7 +57,7 @@ const t = await getTranslations(lang);
         </div>
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.message')}</label>
-          <textarea name="message" rows="5" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <textarea name="message" rows="4" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
         </div>
         <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md font-medium hover:bg-blue-700 transition">{t('contact.submit')}</button>
       </form>
